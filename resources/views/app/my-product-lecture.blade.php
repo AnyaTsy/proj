@@ -207,16 +207,17 @@
 
                 <div :style="showElement == 'action' ? '' : 'display: none'">
                     <div class="progress push">
-                        <div class="progress-bar" role="progressbar" style="width: 30%;" aria-valuenow="30"
+                        <input type="hidden" id="progress-bar-value" class="js-bar-randomize">
+                        <div class="progress-bar" role="progressbar" style="width: {{$lecture->getProgress()}}%;" aria-valuenow="{{$lecture->getProgress()}}"
                              aria-valuemin="0" aria-valuemax="100">
-                            <span class="font-size-sm font-w600">30%</span>
+                            <span class="font-size-sm font-w600">{{$lecture->getProgress()}}%</span>
                         </div>
                     </div>
                     <div class="form-group row items-push mb-0">
                         <div class="col-md-6">
                             <div class="custom-control custom-block custom-control-success">
                                 <input type="checkbox" class="custom-control-input" id="lecture-checkbox"
-                                       name="lecture-checkbox">
+                                       name="lecture-checkbox" @change="saveAction('lecture', {{$lecture->id}})" @if($lecture->checkForInteraction('lecture')) checked @endif>
                                 <label class="custom-control-label" for="lecture-checkbox">
                                                     <span class="d-block text-center">
                                                         <i class="fas fa-book fa-2x mb-2 text-black-50"></i><br>
@@ -232,7 +233,7 @@
                             <div class="col-md-6">
                                 <div class="custom-control custom-block custom-control-success">
                                     <input type="checkbox" class="custom-control-input" id="task-{{$k}}-checkbox"
-                                           name="task-{{$k}}-checkbox">
+                                           name="task-{{$k}}-checkbox" @change="saveAction('task-{{$task->id}}', {{$lecture->id}})" @if($lecture->checkForInteraction('task-' . $task->id)) checked @endif>
                                     <label class="custom-control-label" for="task-{{$k}}-checkbox">
                                                     <span class="d-block text-center">
                                                         <i class="fas fa-tasks fa-2x mb-2 text-black-50"></i><br>

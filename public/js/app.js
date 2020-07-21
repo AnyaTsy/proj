@@ -30556,6 +30556,9 @@ if (false) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
 
 
+window.ax = __webpack_require__(20);
+window.ax.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 var Lectures = null;
 
 if (document.getElementById('vue-lectures')) {
@@ -30569,7 +30572,24 @@ if (document.getElementById('vue-lectures')) {
             console.log(this.showElement);
         },
 
-        methods: {}
+        methods: {
+            saveAction: function saveAction(action, lecture) {
+                var _this = this;
+
+                console.log(action);
+                ax.get('/lecture-action/' + lecture + '/' + action).then(function (response) {
+                    console.log(response);
+                    _this.changeProgress(response.data.progress);
+                }).catch(function (e) {
+                    console.log(e);
+                });
+            },
+            changeProgress: function changeProgress(progress) {
+                var btn = document.getElementById('progress-bar-value');
+                btn.value = progress;
+                btn.click();
+            }
+        }
     });
 }
 

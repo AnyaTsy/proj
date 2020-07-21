@@ -15,6 +15,9 @@ class CreateLectureUserInteractionsTable extends Migration
     {
         Schema::create('lecture_user_interactions', function (Blueprint $table) {
             $table->id();
+            $table->string('action');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('lecture_id');
             $table->timestamps();
         });
     }

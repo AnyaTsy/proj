@@ -44,7 +44,7 @@ class User extends Authenticatable
     /**
      * Relation: get payments.
      *
-     * @return HasMany
+     * @return HasMany.
      */
     public function payments()
     {
@@ -70,5 +70,16 @@ class User extends Authenticatable
     public function getPaidProducts()
     {
         return $this->products()->get();
+    }
+
+    /**
+     * Check for paid product.
+     *
+     * @param int $productId
+     * @return mixed
+     */
+    public function checkForPaidProduct(int $productId)
+    {
+        return $this->products()->where('id', $productId)->exists();
     }
 }

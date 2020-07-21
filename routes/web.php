@@ -20,6 +20,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/my-products', 'UserController@showProductsPage');
     Route::get('/my-products/{product}', 'UserController@showProductPage');
     Route::get('/my-products/{product}/{lecture}', 'UserController@showProductLecturePage');
+    Route::group(['middleware' => ['ajax']], function () {
+        Route::get('/lecture-action/{lecture}/{action}', 'LectureUserInteractionController@saveAction');
+    });
 });
 
 Auth::routes();

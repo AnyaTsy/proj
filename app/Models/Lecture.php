@@ -55,6 +55,16 @@ class Lecture extends FileModel implements HasMedia
     }
 
     /**
+     * Relation: get all user's interactions.
+     *
+     * @return HasMany
+     */
+    public function userInteractions()
+    {
+        return $this->hasMany(LectureUserInteraction::class);
+    }
+
+    /**
      * Relation: get the product.
      *
      * @return BelongsTo
@@ -77,6 +87,38 @@ class Lecture extends FileModel implements HasMedia
             $response[] = $photo->getUrl();
         }
         return $response;
+    }
+
+    /**
+     * Attribute: get users interactions
+     *
+     * @return array
+     */
+    public function getUsersInteractionsAttribute()
+    {
+        return $this->userInteractions()->where('user_id')->pluck('action')->toArray();
+    }
+
+    /**
+     * Attribute: get users interactions
+     *
+     * @param string $action
+     * @return boolean
+     */
+    public function checkForInteraction(string $action)
+    {
+        return $this->userInteractions()->where('user_id', auth()->user()->id)->where('action', $action)->exists();
+    }
+
+    /**
+     * Get progress for the current user
+     *
+     * @return boolean
+     */
+    public function getProgress()
+    {
+        $userID = auth()->user()->id;
+        return ($this->userInteractions()->where('user_id', $userID)->count() * 100) / ($this->tasks()->count() + 1);
     }
 
     /**
