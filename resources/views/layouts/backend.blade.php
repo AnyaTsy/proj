@@ -73,11 +73,6 @@
                     <!-- Toggle Sidebar Style -->
                     <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                     <!-- Class Toggle, functionality initialized in Helpers.coreToggleClass() -->
-                    <a class="js-class-toggle text-white-75" data-target="#sidebar-style-toggler"
-                       data-toggle="layout" data-action="sidebar_style_toggle"
-                       href="javascript:void(0)">
-                        <i class="fa fa-toggle-off"></i>
-                    </a>
                     <!-- END Toggle Sidebar Style -->
 
                     <!-- Close Sidebar, Visible only on mobile screens -->
@@ -96,41 +91,12 @@
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
             <ul class="nav-main">
-                <li class="nav-main-item">
-                    <a class="nav-main-link{{ request()->is('home') ? ' active' : '' }}" href="/home">
-                        <i class="nav-main-link-icon si si-cursor"></i>
-                        <span class="nav-main-link-name">Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-main-heading">Exhibition</li>
-                <li class="nav-main-item{{ request()->is('exhibitions/*') || request()->is('exibitions') ? ' active' : '' }}">
-                    <a class="nav-main-link" href="/exhibitions">
+                <li class="nav-main-heading">Обучение</li>
+                <li class="nav-main-item{{ request()->is('my-products/*') || request()->is('my-products') ? ' active' : '' }}">
+                    <a class="nav-main-link" href="/my-products">
                         <i class="nav-main-link-icon fas fa-globe"></i>
-                        <span class="nav-main-link-name">Find Exhibitors</span>
+                        <span class="nav-main-link-name">Мои Инфопродукты</span>
                     </a>
-                </li>
-                <li class="nav-main-heading">Database</li>
-                <li class="nav-main-item{{ request()->is('companies/*') || request()->is('companies') ? ' active' : '' }}">
-                    <a class="nav-main-link" href="/companies">
-                        <i class="nav-main-link-icon far fa-building"></i>
-                        <span class="nav-main-link-name">Find Companies</span>
-                    </a>
-                </li>
-                <li class="nav-main-heading">My Lists</li>
-                <li class="nav-main-item{{ request()->is('lists/*') || request()->is('lists') ? ' open' : '' }}">
-
-                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
-                       aria-expanded="true">
-                        <i class="nav-main-link-icon si si-star"></i>
-                        <span class="nav-main-link-name">Favorites</span>
-                    </a>
-                    <ul class="nav-main-submenu">
-                        <li class="nav-main-item">
-                            <a class="nav-main-link{{ request()->is('lists') ? ' active' : '' }}" href="/lists">
-                                <span class="nav-main-link-name">All Lists</span>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
             </ul>
         </div>
@@ -173,11 +139,11 @@
                             <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                             <a class="dropdown-item" href="/profile" data-toggle="layout"
                                data-action="side_overlay_toggle">
-                                <i class="far fa-fw fa-user mr-1"></i> Profile Settings
+                                <i class="far fa-fw fa-user mr-1"></i> Настройки Аккаунта
                             </a>
                             <a class="dropdown-item" href="/support" data-toggle="layout"
                                data-action="side_overlay_toggle">
-                                <i class="far fa-fw fa-question-circle mr-1"></i> Support
+                                <i class="far fa-fw fa-question-circle mr-1"></i> Служба Поддержки
                             </a>
                             <!-- END Side Overlay -->
 
@@ -185,7 +151,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Sign Out
+                                <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Выход
                             </a>
 
                         </div>

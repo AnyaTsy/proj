@@ -16,7 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/support', 'UserController@showSupportPage');
+Route::post('/support', 'UserController@sendSupportMessage')->name('support');
+
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/profile', 'UserController@showProfilePage');
+    Route::post('/profile', 'UserController@updateProfile')->name('profile');
     Route::get('/my-products', 'UserController@showProductsPage');
     Route::get('/my-products/{product}', 'UserController@showProductPage');
     Route::get('/my-products/{product}/{lecture}', 'UserController@showProductLecturePage');

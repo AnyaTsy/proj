@@ -113,7 +113,7 @@ class Lecture extends FileModel implements HasMedia
     /**
      * Get progress for the current user
      *
-     * @return boolean
+     * @return mixed
      */
     public function getProgress()
     {

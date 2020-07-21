@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
@@ -81,5 +82,37 @@ class User extends Authenticatable
     public function checkForPaidProduct(int $productId)
     {
         return $this->products()->where('id', $productId)->exists();
+    }
+
+
+    /**
+     * Update user's profile.
+     *
+     * @param $data
+     * @return void
+     * @throws \Exception
+     */
+    public function updateProfile(array $data)
+    {
+        $collectedData = collect($data);
+        $this->update($collectedData->only('name', 'email')->toArray());
+        if(key_exists('new_password', $data) && key_exists('current_password', $data)) $this->updatePassword(['current_password' => $data['current_password'], 'new_password' => $data['new_password']]);
+    }
+
+
+    /**
+     * Update user's password.
+     *
+     * @param $passwordArray
+     * @return boolean
+     * @throws \Exception
+     */
+    public function updatePassword(array $passwordArray)
+    {
+        if(empty($passwordArray['current_password']) || empty($passwordArray['new_password'])) return false;
+        if (!Hash::check($passwordArray['current_password'], $this->password)) throw new \Exception('Был введен неверный текущий пароль.');
+        if(strlen($passwordArray['new_password']) < 6) throw new \Exception('Пароль должен состоять более, чем из 6 символов.');
+        $this->password = Hash::make($passwordArray['new_password']);
+        return $this->save();
     }
 }
