@@ -85,4 +85,20 @@ class UserController extends Controller
         }
         return redirect('/profile')->with('status', 'Ваша информация была успешно обновлена!');
     }
+
+    /**
+     * Show the lecture's page.
+     *
+     * @param string $product
+     * @param string $lecture
+     * @return mixed
+     */
+    public function showProductLecturePage(string $product, string $lecture)
+    {
+        $product = Product::where('slug', $product)->first();
+        if(!$product) abort(404);
+        $lecture = $product->lectures()->whereSlug($lecture)->first();
+        if(!$lecture) abort(404);
+        return view('app.my-product-lecture', compact('lecture'));
+    }
 }

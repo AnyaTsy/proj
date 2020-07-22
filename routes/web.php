@@ -19,6 +19,8 @@ Route::get('/', function () {
 Route::get('/support', 'UserController@showSupportPage');
 Route::post('/support', 'UserController@sendSupportMessage')->name('support');
 
+Route::get('/payment', 'Payment\PaymentController@generateForm');
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/profile', 'UserController@showProfilePage');
     Route::post('/profile', 'UserController@updateProfile')->name('profile');
