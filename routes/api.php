@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/liqpay/server-response', 'Payment\PaymentController@serverResponse');
+Route::post('/liqpay/result-response', 'Payment\PaymentController@resultResponse');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

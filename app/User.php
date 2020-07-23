@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Payment;
 use App\Models\Product;
+use App\Notifications\ResetPasswordNotificationAfterPurchase;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -21,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'is_new'
     ];
 
     /**
@@ -59,7 +60,7 @@ class User extends Authenticatable
      */
     public function products()
     {
-        $ids = $this->payments()->pluck('product_id')->toArray();
+        $ids = $this->payments()->whereStatus('success')->pluck('product_id')->toArray();
         return Product::whereIn('id', $ids);
     }
 
@@ -114,5 +115,28 @@ class User extends Authenticatable
         if(strlen($passwordArray['new_password']) < 6) throw new \Exception('Пароль должен состоять более, чем из 6 символов.');
         $this->password = Hash::make($passwordArray['new_password']);
         return $this->save();
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        parent::sendPasswordResetNotification($token);
+        //$this->notify(new ResetPasswordNotification($token));
+    }
+
+    /**
+     * Send the password reset notification after buy a product.
+     *
+     * @param  array  $tokenAndId
+     * @return void
+     */
+    public function sendPasswordResetNotificationAfterPurchase($tokenAndId)
+    {
+        $this->notify(new ResetPasswordNotificationAfterPurchase($tokenAndId['token'], $tokenAndId['transaction']));
     }
 }

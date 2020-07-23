@@ -30,6 +30,18 @@ class Product extends Model implements HasMedia
     ];
 
     /**
+     * Attribute: get current price.
+     *
+     * @return float
+     */
+    public function getCurrentPriceAttribute()
+    {
+        $price = $this->default_price;
+        if($this->sale_price && ( is_null($this->sale_end) || (new \DateTime() > $this->sale_end))) $price = $this->sale_price;
+        return $price;
+    }
+
+    /**
      * Attribute: get main image path.
      *
      * @return integer

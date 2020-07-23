@@ -13,13 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test', function (\Illuminate\Http\Request $request) {
+    $token = app('auth.password.broker')->createToken(auth()->user());
+
+    $lol = auth()->user()->sendPasswordResetNotificationAfterPurchase($token);
+
+    dd($lol);
 });
+Route::get('/', function () {
+    return view('app.landing');
+});
+Route::get('/products/{product}', 'ProductController@index');
 Route::get('/support', 'UserController@showSupportPage');
 Route::post('/support', 'UserController@sendSupportMessage')->name('support');
 
-Route::get('/payment', 'Payment\PaymentController@generateForm');
+Route::post('/payment/{product}', 'Payment\PaymentController@generateForm');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/profile', 'UserController@showProfilePage');
