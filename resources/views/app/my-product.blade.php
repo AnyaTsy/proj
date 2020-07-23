@@ -41,7 +41,7 @@
                     @foreach($product->lectures()->orderBy('order')->get() as $lecture)
                     <tr>
                         <td class="text-center w-25 d-none d-md-table-cell">
-                            <a class="item item-circle bg-primary text-white font-size-h2 mx-auto" href="/my-products/{{$product->slug}}/{{$product->lectures()->first()->slug}}">
+                            <a class="item item-circle bg-primary text-white font-size-h2 mx-auto" href="/my-products/{{$product->slug}}/{{$lecture->slug}}">
                                {{$lecture->order < 10 ? ('0'.$lecture->order) : $lecture->order}}
                             </a>
                         </td>
@@ -53,7 +53,7 @@
                                                         <i class="fa fa-clock"></i> {{$lecture->time}}
                                                     </span>
                                 </div>
-                                <a class="link-fx h4 mb-2 d-inline-block text-dark" href="/my-products/{{$product->slug}}/{{$product->lectures()->first()->slug}}">
+                                <a class="link-fx h4 mb-2 d-inline-block text-dark" href="/my-products/{{$product->slug}}/{{$lecture->slug}}">
                                     {{$lecture->name}}
                                 </a>
                                 <p class="text-muted mb-0">
