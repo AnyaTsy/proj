@@ -13,7 +13,7 @@
                         <h1 class="title wow slideFadeInUp" >
                             Creative agency, corporate and portfolio HTML Template</h1>
 
-                        <a class="sveetlo-button btn-large btn-transparent wow slideFadeInUp" href="#" @guest data-toggle="modal" data-target="#buy-product-modal" @elseguest onclick="document.getElementById('buy-form').submit()" @endguest><span
+                        <a class="sveetlo-button btn-large btn-transparent wow slideFadeInUp" href="#" @guest data-toggle="modal" data-target="#buy-product-modal" @else onclick="document.getElementById('buy-form').submit()" @endguest><span
                                 class="button-text">Оплатить</span>
                             <span class="far fa-shopping-cart"> </span>
                         </a> <br><br><br>
@@ -482,7 +482,7 @@
                                     here.</a></p>
                         </div>
                         <div class="button-wrapper">
-                            <a class="sveetlo-button btn-large btn-solid btn-primary-color" href="#" @guest data-toggle="modal" data-target="#buy-product-modal" @elseguest onclick="document.getElementById('buy-form').submit()" @endguest><span
+                            <a class="sveetlo-button btn-large btn-solid btn-primary-color" href="#" @guest data-toggle="modal" data-target="#buy-product-modal" @else onclick="document.getElementById('buy-form').submit()" @endguest><span
                                     class="button-text">Buy Now</span><span class="button-icon-right"><i
                                         class="far fa-shopping-cart"></i></span></a>
                         </div>

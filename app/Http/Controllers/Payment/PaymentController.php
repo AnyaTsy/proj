@@ -28,7 +28,11 @@ class PaymentController extends Controller
             ]);
             $user = User::where('email', $request->email)->first();
             if(!$user) $user = User::create(['is_new' => 1, 'name' => $request->name, 'email' => $request->email, 'password' => bcrypt('password_' . time())]);
-        } else $user = auth()->user();
+            if($user->checkForPaidProduct($product->id)) return redirect('/login')->with('status', 'Пользователь с этим электронным адресом уже  имеет доступ к данному инфопродукту. Пожалуйста, авторизуйтесь для просмотра лекций.');
+        } else {
+            $user = auth()->user();
+            if($user->checkForPaidProduct($product->id)) return redirect('/my-products');
+        }
 
         $payment = Payment::create([
             'email' => $user->email,
@@ -102,7 +106,6 @@ class PaymentController extends Controller
                 NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction], $user->email, 'Спасибо за оплату!');
             }
             NotificationJob::dispatch('emails.admin_purchase_notification', ['user' => $user, 'transaction' => $transaction], 'manichevassvetlana@gmail.com', 'New Order');
-            $user->update(['is_new' => 0]);
             $status = 1;
         } else if($payment) {
             $payment->update(['status' => $data['status']]);

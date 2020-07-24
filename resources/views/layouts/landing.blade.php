@@ -104,7 +104,7 @@
                                     <!-- End Mainmanu Nav -->
                                     <div class="sveetlo-header-extra d-flex align-items-center ml--30">
                                         <!-- Start Hamburger -->
-                                        <a href="#" class="sveetlo-button btn-large btn-solid btn-primary-color d-none d-md-block" @guest data-toggle="modal" data-target="#buy-product-modal" @elseguest onclick="document.getElementById('buy-form').submit()" @endguest>
+                                        <a href="#" class="sveetlo-button btn-large btn-solid btn-primary-color d-none d-md-block" @guest data-toggle="modal" data-target="#buy-product-modal" @else onclick="document.getElementById('buy-form').submit()" @endguest>
                                             <span class="button-text">Buy Now</span>
                                             <span class="button-icon-right">
                                                     <i class="far fa-shopping-cart"></i>
@@ -137,7 +137,12 @@
                                                                 <label>Email</label>
                                                                 <span class="focus-border"></span>
                                                             </div>
-
+                                                            <div class="form-group text-center">
+                                                                <div class="custom-control custom-checkbox custom-control-primary">
+                                                                    <input type="checkbox" class="custom-control-input" id="signup-terms" name="signup-terms" required>
+                                                                    <label class="custom-control-label" for="signup-terms">Нажимая кнопку Регистрация, вы принимаете <a target="_blank" class="font-w600 font-size-sm" href="/terms">Условия, Политику использования данных</a></label>
+                                                                </div>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <button class="sveetlo-button btn-large btn-transparent w-100">
                                                                     <span class="button-text">Get Pricing Now</span><span class="button-icon"></span>
@@ -149,8 +154,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @elseguest
-                                        <form method="post" action="{{'/payment/' . \App\Models\Product::first()->id}}" id="buy-form"></form>
+                                    @else
+                                        <form method="post" action="{{'/payment/' . \App\Models\Product::first()->id}}" id="buy-form">
+                                            @csrf
+                                        </form>
                                     @endguest
 
                                 </div>
