@@ -21,6 +21,12 @@ Route::get('/home', function () {
     return redirect('/my-products');
 })->name('home');
 
+/* App Settings Routes */
+// Change the language of the application
+Route::get('/language/{lang}', 'TranslateController@changeLanguage');
+/* End of App Settings Routes */
+
+
 /* Support Routes */
 // Show the instructions page
 Route::get('/instructions', 'UserController@showInstructionsPage');

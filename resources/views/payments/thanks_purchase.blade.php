@@ -21,7 +21,7 @@
                             <div class="js-validation-lock">
                                 <div class="form-group text-center">
                                     <a href="/" class="btn btn-block btn-hero-{{$status ? 'primary' : 'danger'}}" style="color: white">
-                                        <i class="fa fa-fw fa-reply mr-1"></i> Вернуться на главную страницу
+                                        <i class="fa fa-fw fa-reply mr-1"></i> {{ t('Вернуться на главную страницу') }}
                                     </a>
                                 </div>
                             </div>
@@ -30,15 +30,15 @@
                     </div>
                     <div class="col-md-6 order-md-0 bg-{{$status ? 'primary' : 'danger'}}-op d-flex align-items-center">
                         <div class="block-content block-content-full px-lg-5 py-md-5 py-lg-6 text-center">
-                            <div class="d-block text-white font-size-lg font-w600 mb-3">{{ !$status ? 'Извините, но что-то пошло не так :(' : 'Оплата прошла успешно!' }}</div>
+                            <div class="d-block text-white font-size-lg font-w600 mb-3">{{ t(!$status ? 'Извините, но что-то пошло не так :(' : 'Оплата прошла успешно!') }}</div>
                             @if($status)
-                            <div class="text-white-75">Вам было отправлено письмо с дальнейшими инструкциями.</div>
-                            <div class="text-white-75">Пожалуйста, проверьте свою почту и папку спам.</div>
-                            <div class="text-white-75">Если вы не видите письма в почтовом ящике, указанном при оплате, пожалуйста, воспользуйтесь <a class="d-block text-white font-size-lg font-w600" href="/instructions">инструкцией</a></div>
-                            <div class="text-white-75">Если у вас возникли какие-то трудности - вы можете обратиться в нашу <a class="d-block text-white font-size-lg font-w600" href="/support">службу поддержки</a></div>
+                            <div class="text-white-75">{{ t('Вам было отправлено письмо с дальнейшими инструкциями.') }}</div>
+                            <div class="text-white-75">{{ t('Пожалуйста, проверьте свою почту и папку спам.') }}</div>
+                            <div class="text-white-75">{{ t('Если вы не видите письма в почтовом ящике, указанном при оплате, пожалуйста, воспользуйтесь' ) }} <a class="d-block text-white font-size-lg font-w600" href="/instructions">{{ t('инструкцией') }}</a></div>
+                            <div class="text-white-75">{{ t('Если у вас возникли какие-то трудности - вы можете обратиться в нашу') }} <a class="d-block text-white font-size-lg font-w600" href="/support"> {{ t('службу поддержки') }} </a></div>
                             @else
-                                <div class="text-white-75">К сожалению, мы не смогли подтвердить ваш заказ.</div>
-                                <div class="text-white-75">Если у вас возникли какие-то трудности - вы можете обратиться в нашу <a class="d-block text-white font-size-lg font-w600" href="/support">службу поддержки</a></div>
+                                <div class="text-white-75">{{ t('К сожалению, мы не смогли подтвердить ваш заказ.') }}</div>
+                                <div class="text-white-75">{{ t('Если у вас возникли какие-то трудности - вы можете обратиться в нашу') }} <a class="d-block text-white font-size-lg font-w600" href="/support"> {{ t('службу поддержки') }} </a></div>
                             @endif
                         </div>
                     </div>

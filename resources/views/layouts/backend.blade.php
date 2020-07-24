@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ config('app.locale') }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -23,7 +23,7 @@
     <link rel="stylesheet" id="css-main" href="{{ mix('css/dashmix.css') }}">
 
     <!-- You can include a specific file from public/css/themes/ folder to alter the default color theme of the template. eg: -->
-    <link rel="stylesheet" id="css-theme" href="{{ mix('css/themes/xinspire.css') }}">
+    <link rel="stylesheet" id="css-theme" href="{{ mix('css/themes/xpro.css') }}">
     @yield('css_after')
 
     <style>
@@ -35,6 +35,10 @@
             background-color: #e04f1a;
         }
 
+        .lang-select:focus {
+            border: 0;
+            background: transparent;
+        }
     </style>
 
     <!-- Scripts -->
@@ -91,11 +95,21 @@
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
             <ul class="nav-main">
-                <li class="nav-main-heading">Обучение</li>
+                <li class="nav-main-heading">{{ t('Обучение') }}</li>
                 <li class="nav-main-item{{ request()->is('my-products/*') || request()->is('my-products') ? ' active' : '' }}">
                     <a class="nav-main-link" href="/my-products">
-                        <i class="nav-main-link-icon fas fa-globe"></i>
-                        <span class="nav-main-link-name">Мои Инфопродукты</span>
+                        <i class="nav-main-link-icon fas fa-project-diagram"></i>
+                        <span class="nav-main-link-name" style="    font-size: 0.98rem;">{{ t('Мои Инфопродукты') }}</span>
+                    </a>
+                </li>
+                <li class="nav-main-heading">{{ t('Язык Приложения ') }}</li>
+                <li class="nav-main-item{{ request()->is('my-products/*') || request()->is('my-products') ? ' active' : '' }}">
+                    <a class="nav-main-link" tabindex="1">
+                        <i class="nav-main-link-icon fas fa-globe-europe"></i>
+                        <select class="form-control lang-select" onchange="window.location = ('/language/' + this.value)" style="background: transparent; border: 0; box-shadow: 0 0 0 0 black;">
+                            <option value="ru" @if(lang() == 'ru') selected @endif>{{ t('Русский') }}</option>
+                            <option value="ua" @if(lang() == 'ua') selected @endif>{{ t('Украинский') }}</option>
+                        </select>
                     </a>
                 </li>
             </ul>
@@ -139,11 +153,11 @@
                             <!-- Layout API, functionality initialized in Template._uiApiLayout() -->
                             <a class="dropdown-item" href="/profile" data-toggle="layout"
                                data-action="side_overlay_toggle">
-                                <i class="far fa-fw fa-user mr-1"></i> Настройки Аккаунта
+                                <i class="far fa-fw fa-user mr-1"></i> {{ t('Настройки Аккаунта') }}
                             </a>
                             <a class="dropdown-item" href="/support" data-toggle="layout"
                                data-action="side_overlay_toggle">
-                                <i class="far fa-fw fa-question-circle mr-1"></i> Служба Поддержки
+                                <i class="far fa-fw fa-question-circle mr-1"></i> {{ t('Служба Поддержки') }}
                             </a>
                             <!-- END Side Overlay -->
 
@@ -151,7 +165,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> Выход
+                                <i class="far fa-fw fa-arrow-alt-circle-left mr-1"></i> {{ t('Выход') }}
                             </a>
 
                         </div>

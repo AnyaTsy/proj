@@ -144,7 +144,7 @@
 
 .cke_emoji-outer_emoji_block h2 {
 	font-size: 1.3em;
-	font-weight: 600;
+	font-weight: 500;
 	margin: 5px 0 3px 0;
 }
 
@@ -217,7 +217,7 @@
 }
 
 p.cke_emoji-status_description {
-	font-weight: 600;
+	font-weight: 500;
 }
 
 p.cke_emoji-status_full_name {

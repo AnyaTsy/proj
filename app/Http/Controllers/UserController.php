@@ -75,9 +75,10 @@ class UserController extends Controller
         $data = $request->only('name', 'email', 'message');
         SupportRequest::create($data);
         $data['userMessage'] = $request->message;
+        $data['lang'] = lang();
         NotificationJob::dispatch('emails.user_notification', $data, $request->email);
         NotificationJob::dispatch('emails.admin_notification', $data, 'manichevassvetlana@gmail.com');
-        return redirect()->back()->with('status', 'Спасибо за обращение, ваше сообщение было успешно отправлено! Мы с вами скоро свяжемся.');
+        return redirect()->back()->with('status', t('Спасибо за обращение, ваше сообщение было успешно отправлено! Мы с вами скоро свяжемся.'));
     }
 
     /**
@@ -93,7 +94,7 @@ class UserController extends Controller
         } catch(\Exception $exception) {
             return redirect('/profile')->with('error', $exception->getMessage());
         }
-        return redirect('/profile')->with('status', 'Ваша информация была успешно обновлена!');
+        return redirect('/profile')->with('status', t('Ваша информация была успешно обновлена!'));
     }
 
     /**

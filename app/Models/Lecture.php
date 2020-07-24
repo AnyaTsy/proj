@@ -8,17 +8,26 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\Translatable\HasTranslations;
 
 class Lecture extends FileModel implements HasMedia
 {
     use InteractsWithMedia;
+    use HasTranslations;
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [ 'file_name', 'view_name', 'order', 'description', 'name', 'slug', 'product_id', 'time', 'is_frame', 'frame_height'];
+    protected $fillable = [ 'file_name', 'view_name', 'order', 'description', 'name', 'slug', 'product_id', 'time', 'is_frame', 'frame_height', 'lang'];
+
+    /**
+     * The attributes that are translatable.
+     *
+     * @var array
+     */
+    public $translatable = ['name', 'description'];
 
     /**
      * The location of the place where file should be stored.
@@ -122,6 +131,28 @@ class Lecture extends FileModel implements HasMedia
     }
 
     /**
+     * Get the next lecture
+     *
+     * @return mixed
+     */
+    public function getNextLecture()
+    {
+        if(!$this->product) return false;
+        return $this->product->lectures()->where('order', '>', $this->order)->first();
+    }
+
+    /**
+     * Get the previous lecture
+     *
+     * @return mixed
+     */
+    public function getPreviousLecture()
+    {
+        if(!$this->product) return false;
+        return $this->product->lectures()->where('order', '<', $this->order)->first();
+    }
+
+    /**
      * Register the media collections.
      *
      * @return void
@@ -130,7 +161,11 @@ class Lecture extends FileModel implements HasMedia
      */
     public function registerMediaCollections(): void
     {
-        $this->addMediaCollection('multi_files_collection')
+        $this->addMediaCollection('multi_files_collection_ru')
+            ->acceptsMimeTypes(['application/msword', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.ms-powerpoint', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.wordprocessing', 'text/plain', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                'image/bmp', 'image/cis-cod', 'image/gif', 'image/ief', 'image/jpeg', 'image/pipeg', 'image/svg+xml', 'image/tiff', 'image/tiff', 'image/x-cmu-raster', 'image/x-cmx', 'image/x-icon', 'image/x-portable-anymap', 'image/x-portable-bitmap', 'image/x-portable-graymap', 'image/x-portable-pixmap', 'image/x-rgb', 'image/x-xbitmap', 'image/x-xpixmap', 'image/x-xwindowdump', 'image/png']);
+
+        $this->addMediaCollection('multi_files_collection_ua')
             ->acceptsMimeTypes(['application/msword', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.ms-powerpoint', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.wordprocessing', 'text/plain', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                 'image/bmp', 'image/cis-cod', 'image/gif', 'image/ief', 'image/jpeg', 'image/pipeg', 'image/svg+xml', 'image/tiff', 'image/tiff', 'image/x-cmu-raster', 'image/x-cmx', 'image/x-icon', 'image/x-portable-anymap', 'image/x-portable-bitmap', 'image/x-portable-graymap', 'image/x-portable-pixmap', 'image/x-rgb', 'image/x-xbitmap', 'image/x-xpixmap', 'image/x-xwindowdump', 'image/png']);
     }

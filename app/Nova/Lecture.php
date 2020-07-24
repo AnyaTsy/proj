@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\NovaTranslatable\Translatable;
 
 class Lecture extends Resource
 {
@@ -50,16 +51,25 @@ class Lecture extends Resource
         return [
             ID::make()->sortable(),
             BelongsTo::make('Product', 'product', Product::class),
-            Text::make('Name')->sortable(),
+            Translatable::make([
+                Text::make('Name', 'name')
+                    ->sortable()->required(),
+            ]),
+            Translatable::make([
+                Textarea::make('Description')
+                    ->sortable()->required(),
+            ]),
+
             Text::make('Slug')->sortable(),
             Number::make('Order')->sortable(),
             Text::make('Time')->hideFromIndex(),
-            Textarea::make('Description')->hideFromIndex(),
             Boolean::make('Use Frame', 'is_frame')->sortable(),
             Number::make('Frame Height', 'frame_height')->hideFromIndex()->sortable(),
             Code::make('Content', 'content')
                 ->hideFromIndex()->nullable(),
-            Files::make('Files', 'multi_files_collection')
+            Files::make('Files Ru', 'multi_files_collection_ru')
+                ->fullSize(),
+            Files::make('Files Ua', 'multi_files_collection_ua')
                 ->fullSize()
         ];
     }

@@ -14755,7 +14755,7 @@ Masonary Grid List
   color: #00D09C;
   font-size: 45px;
   top: 69px;
-  font-weight: 600;
+  font-weight: 500;
   z-index: 3;
   background-image: url("../images/shape/quote.svg");
   background-repeat: no-repeat, repeat;
@@ -17149,7 +17149,7 @@ a.video-btn span.triangle {
   line-height: 26px;
   border-radius: 0;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   color: #702FFF;
   outline: none;
   border: 0 none;
@@ -20080,7 +20080,7 @@ Comming Soon Area
 .sveetlo-blog-details-area .blog-share .text {
   color: #000248;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 32px;
   display: inline-block;
   padding-right: 36px;

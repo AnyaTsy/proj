@@ -1,5 +1,5 @@
 @extends('layouts.simple', [$title =  $title ?? 'Instructions', $meta = $meta ?? ''])
-
+{{-- TODO: make question and translates --}}
 @section('content')
     <!-- Main Container -->
     <main id="main-container">
@@ -19,7 +19,7 @@
             <!-- Frequently Asked Questions -->
             <div class="block block-rounded block-bordered">
                 <div class="block-header block-header-default">
-                    <h3 class="block-title">Часто Задаваемые Вопросы</h3>
+                    <h3 class="block-title">{{ t('Часто Задаваемые Вопросы') }}</h3>
                 </div>
                 <div class="block-content">
                     <!-- Introduction -->
@@ -134,7 +134,7 @@
                             <div id="faq2" role="tablist" aria-multiselectable="true">
                                 <div class="block block-rounded mb-1">
                                     <div class="block-header block-header-default" role="tab" id="faq2_h1">
-                                        <a class="font-w600" data-toggle="collapse" data-parent="#faq2" href="#faq2_q1" aria-expanded="true" aria-controls="faq2_q1">Как оплатить выбранный продукт?</a>
+                                        <a class="font-w600" data-toggle="collapse" data-parent="#faq2" href="#faq2_q1" aria-expanded="true" aria-controls="faq2_q1">{{ t('Как оплатить выбранный продукт?') }}</a>
                                     </div>
                                     <div id="faq2_q1" class="collapse" role="tabpanel" aria-labelledby="faq2_h1" data-parent="#faq2">
                                         <div class="block-content">

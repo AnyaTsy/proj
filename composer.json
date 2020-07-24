@@ -17,7 +17,9 @@
         "laravel/nova": "*",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.1",
-        "liqpay/liqpay": "^1.2"
+        "liqpay/liqpay": "^1.2",
+        "mrmonat/nova-translatable": "^2.1",
+        "spatie/nova-translatable": "^3.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -48,7 +50,10 @@
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/"
-        }
+        },
+        "files": [
+            "./app/Helpers/Helper.php"
+        ]
     },
     "repositories": [
         {

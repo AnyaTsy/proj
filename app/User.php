@@ -112,8 +112,8 @@ class User extends Authenticatable implements MustVerifyEmail
     public function updatePassword(array $passwordArray)
     {
         if(empty($passwordArray['current_password']) || empty($passwordArray['new_password'])) return false;
-        if (!Hash::check($passwordArray['current_password'], $this->password)) throw new \Exception('Был введен неверный текущий пароль.');
-        if(strlen($passwordArray['new_password']) < 6) throw new \Exception('Пароль должен состоять более, чем из 6 символов.');
+        if (!Hash::check($passwordArray['current_password'], $this->password)) throw new \Exception(t('Был введен неверный текущий пароль.'));
+        if(strlen($passwordArray['new_password']) < 6) throw new \Exception(t('Пароль должен состоять более, чем из 6 символов.'));
         $this->password = Hash::make($passwordArray['new_password']);
         return $this->save();
     }

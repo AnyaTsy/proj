@@ -28,7 +28,7 @@ class PaymentController extends Controller
             ]);
             $user = User::where('email', $request->email)->first();
             if(!$user) $user = User::create(['is_new' => 1, 'name' => $request->name, 'email' => $request->email, 'password' => bcrypt('password_' . time())]);
-            if($user->checkForPaidProduct($product->id)) return redirect('/login')->with('status', 'Пользователь с этим электронным адресом уже  имеет доступ к данному инфопродукту. Пожалуйста, авторизуйтесь для просмотра лекций.');
+            if($user->checkForPaidProduct($product->id)) return redirect('/login')->with('status', t('Пользователь с этим электронным адресом уже  имеет доступ к данному инфопродукту. Пожалуйста, авторизуйтесь для просмотра лекций.'));
         } else {
             $user = auth()->user();
             if($user->checkForPaidProduct($product->id)) return redirect('/my-products');
@@ -82,10 +82,10 @@ class PaymentController extends Controller
             env('LIQPAY_PRIVATE_KEY')
             , 1 ));
 
-        if($sign != $signCheck) throw new \Exception('Извините, но мы не можем авторизовать этот запрос. Пожалуйста, свяжитесь с нашей службой поддержки, если у вас возникли проблемы.');
+        if($sign != $signCheck) throw new \Exception(t('Извините, но мы не можем авторизовать этот запрос. Пожалуйста, свяжитесь с нашей службой поддержки, если у вас возникли проблемы.'));
 
         $payment = Payment::whereId($data['order_id'])->first();
-        if(!$payment) throw new \Exception('Извините, но мы не можем найти ваш заказ. Пожалуйста, свяжитесь с нашей службой поддержки, если у вас возникли проблемы.');
+        if(!$payment) throw new \Exception(t('Извините, но мы не можем найти ваш заказ. Пожалуйста, свяжитесь с нашей службой поддержки, если у вас возникли проблемы.'));
         if ($payment && $data['status'] == 'success') {
             if($payment->status == 'success') return view('payments.thanks_purchase', ['status' => 1]);
             $transaction = $data['transaction_id'];
@@ -96,14 +96,14 @@ class PaymentController extends Controller
                 if(!$user) $user = User::create(['name' => '', 'email' => $data['email'], 'password' => bcrypt('password_' . time()), 'is_new' => 1]);
                 if($user->is_new) {
                     $token = app('auth.password.broker')->createToken($user);
-                    NotifyUserJob::dispatch($user->id, 'sendPasswordResetNotificationAfterPurchase', ['token' => $token, 'transaction' => $transaction]);
+                    NotifyUserJob::dispatch($user->id, 'sendPasswordResetNotificationAfterPurchase', ['token' => $token, 'transaction' => $transaction, 'lang' => lang()]);
                 }
                 else {
-                    NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction], $user->email, 'Спасибо за оплату!');
+                    NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction, 'lang' => lang()], $user->email, t('Спасибо за оплату!'));
                 }
             } else {
                 $user = auth()->user();
-                NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction], $user->email, 'Спасибо за оплату!');
+                NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction, 'lang' => lang()], $user->email, t('Спасибо за оплату!'));
             }
             NotificationJob::dispatch('emails.admin_purchase_notification', ['user' => $user, 'transaction' => $transaction], 'manichevassvetlana@gmail.com', 'New Order');
             $status = 1;

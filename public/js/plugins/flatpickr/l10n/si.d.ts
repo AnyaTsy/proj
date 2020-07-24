@@ -49,7 +49,7 @@ declare const _default: {
     pl?: CustomLocale | undefined;
     pt?: CustomLocale | undefined;
     ro?: CustomLocale | undefined;
-    ru?: CustomLocale | undefined;
+    {{ t('Оплатить') }}?: CustomLocale | undefined;
     si?: CustomLocale | undefined;
     sk?: CustomLocale | undefined;
     sl?: CustomLocale | undefined;

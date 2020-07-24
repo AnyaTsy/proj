@@ -77,18 +77,36 @@
 @section('content')
     <!-- Hero -->
     <div class="bg-body-light">
-        <div class="content content-full">
-            <div class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center">
-                <h1 class="flex-sm-fill font-size-h2 font-w400 mt-2 mb-0 mb-sm-2">{{$lecture->name}}</h1>
-                <nav class="flex-sm-00-auto ml-sm-3" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item">
-                            <a style="font-size: 1rem; font-weight: 400; line-height: 1.5; color: #495057;"
-                               href="/my-products/{{$lecture->product->slug}}">{{$lecture->product->name}}</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">{{$lecture->name}}</li>
-                    </ol>
-                </nav>
+        <div class="bg-light">
+            <div class="content content-full">
+                <div class="py-4 text-center">
+                    <h2 class="font-w700 mb-3">
+                        {{$lecture->getTranslation('name', lang())}}
+                    </h2>
+                    <h3 class="font-size-sm mb-3 font-w400 font-italic">
+                        {{$lecture->getTranslation('description', lang())}}
+                    </h3>
+                    <div class="progress push">
+                        <div class="progress-bar bg-gd-primary" role="progressbar" style="width: {{$lecture->getProgress()}}%;"
+                             aria-valuenow="{{$lecture->getProgress()}}"
+                             aria-valuemin="0" aria-valuemax="100">
+                            <span class="font-size-sm font-w600">{{$lecture->getProgress()}}%</span>
+                        </div>
+                    </div>
+                    @if($lecture->getNextLecture())
+                        <a class="btn btn-hero-primary bg-gd-primary"
+                           href="/my-products/{{$lecture->product->slug}}/{{$lecture->getNextLecture()->slug}}"
+                           data-toggle="click-ripple">
+                            <i class="fa fa-play mr-1"></i> {{ t('Следующая Лекция') }}
+                        </a>
+                    @elseif($lecture->getPreviousLecture())
+                        <a class="btn btn-hero-primary bg-gd-primary"
+                           href="/my-products/{{$lecture->product->slug}}/{{$lecture->getPreviousLecture()->slug}}"
+                           data-toggle="click-ripple">
+                            <i class="fa fa-play mr-1"></i> {{ t('Предыдущая Лекция') }}
+                        </a>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
@@ -102,7 +120,7 @@
                 <button type="button" class="btn btn-block btn-light d-flex justify-content-between align-items-center"
                         data-toggle="class-toggle" data-target="#horizontal-navigation-hover-centered"
                         data-class="d-none">
-                    Меню
+                    {{ t('Меню') }}
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
@@ -115,7 +133,7 @@
                         <a class="nav-main-link " :class="showElement == 'lecture' ? ' active' : ''"
                            href="javascript:void(0)" @click="showElement = 'lecture'">
                             <i class="nav-main-link-icon fas fa-book"></i>
-                            <span class="nav-main-link-name">Лекция</span>
+                            <span class="nav-main-link-name">{{ t('Лекция') }}</span>
                         </a>
                     </li>
                     @foreach($lecture->tasks as $k => $task)
@@ -123,7 +141,7 @@
                             <a class="nav-main-link " :class="showElement == 'task-{{$k}}' ? ' active' : ''"
                                href="javascript:void(0)" @click="showElement = 'task-{{$k}}'">
                                 <i class="nav-main-link-icon fas fa-tasks"></i>
-                                <span class="nav-main-link-name">Задание {{$k + 1}}</span>
+                                <span class="nav-main-link-name">{{ t('Задание') }} {{$k + 1}}</span>
                             </a>
                         </li>
                     @endforeach
@@ -131,7 +149,7 @@
                         <a class="nav-main-link " :class="showElement == 'action' ? ' active' : ''"
                            href="javascript:void(0)" @click="showElement = 'action'">
                             <i class="nav-main-link-icon fas fa-spinner"></i>
-                            <span class="nav-main-link-name">Прогресс</span>
+                            <span class="nav-main-link-name">{{ t('Прогресс') }}</span>
                         </a>
                     </li>
                 </ul>
@@ -162,7 +180,7 @@
                 <!-- Files Content -->
                     <div class="gallery editable" slot="value">
                         <div class="gallery-list clearfix">
-                            @foreach($lecture->getMedia('multi_files_collection') as $file)
+                            @foreach($lecture->getMedia('multi_files_collection_' . lang()) as $file)
                                 <div class="gallery-item gallery-item-file mb-3 p-3 mr-3" style="border-radius: 0;">
                                     <div class="gallery-item-info">
                                         <a href="{{$file->getUrl()}}" target="_blank" class="download mr-2"
@@ -192,7 +210,7 @@
                     <!-- Files Tab Content -->
                         <div class="gallery editable" slot="value">
                             <div class="gallery-list clearfix">
-                                @foreach($task->getMedia('multi_files_collection') as $file)
+                                @foreach($task->getMedia('multi_files_collection_' . lang()) as $file)
                                     <div class="gallery-item gallery-item-file mb-3 p-3 mr-3" style="border-radius: 0;">
                                         <div class="gallery-item-info">
                                             <a href="{{$file->getUrl()}}" target="_blank" class="download mr-2"
@@ -220,14 +238,7 @@
 
 
                 <div :style="showElement == 'action' ? '' : 'display: none'">
-                    <div class="progress push">
-                        <input type="hidden" id="progress-bar-value" class="js-bar-randomize">
-                        <div class="progress-bar" role="progressbar" style="width: {{$lecture->getProgress()}}%;"
-                             aria-valuenow="{{$lecture->getProgress()}}"
-                             aria-valuemin="0" aria-valuemax="100">
-                            <span class="font-size-sm font-w600">{{$lecture->getProgress()}}%</span>
-                        </div>
-                    </div>
+                    <input type="hidden" id="progress-bar-value" class="js-bar-randomize">
                     <div class="form-group row items-push mb-0">
                         <div class="col-md-6">
                             <div class="custom-control custom-block custom-control-success">
@@ -237,7 +248,7 @@
                                 <label class="custom-control-label" for="lecture-checkbox">
                                                     <span class="d-block text-center">
                                                         <i class="fas fa-book fa-2x mb-2 text-black-50"></i><br>
-                                                        Изучение Лекции
+                                                        {{ t('Изучение Лекции') }}
                                                     </span>
                                 </label>
                                 <span class="custom-block-indicator">
@@ -255,7 +266,7 @@
                                     <label class="custom-control-label" for="task-{{$k}}-checkbox">
                                                     <span class="d-block text-center">
                                                         <i class="fas fa-tasks fa-2x mb-2 text-black-50"></i><br>
-                                                        Выполнение Задания №{{$k + 1}}
+                                                        {{ t('Выполнение Задания') }} №{{$k + 1}}
                                                     </span>
                                     </label>
                                     <span class="custom-block-indicator">

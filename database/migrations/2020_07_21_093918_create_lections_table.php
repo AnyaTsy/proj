@@ -15,7 +15,7 @@ class CreateLectionsTable extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->text('name');
             $table->string('slug')->unique();
             $table->string('file_name');
             $table->string('view_name');

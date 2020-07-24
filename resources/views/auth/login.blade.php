@@ -23,7 +23,7 @@
                                 <a class="link-fx font-w700 font-size-h1" href="/">
                                     <span class="text-dark">{{ config('app.name') }}</span>
                                 </a>
-                                <p class="text-uppercase font-w700 font-size-sm text-muted">Вход в аккаунт</p>
+                                <p class="text-uppercase font-w700 font-size-sm text-muted">{{ t('Вход в аккаунт') }}</p>
                             </div>
                             <!-- END Header -->
 
@@ -32,7 +32,7 @@
                                 @csrf
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input id="email" type="email" placeholder="Электронная Почта" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                        <input id="email" type="email" placeholder="{{ t('Электронная Почта') }}" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                                         <div class="input-group-append">
                                                     <span class="input-group-text">
                                                         <i class="fa fa-user-circle"></i>
@@ -40,14 +40,14 @@
                                         </div>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
-                                               {{ $message }}
+                                               {{ t($message) }}
                                             </span>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <input id="password" type="password" placeholder="Пароль" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                        <input id="password" type="password" placeholder="{{ t('Пароль') }}" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                                         <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="fa fa-asterisk"></i>
@@ -55,7 +55,7 @@
                                         </div>
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
-                                              {{ $message }}
+                                              {{ t($message) }}
                                             </span>
                                         @enderror
                                     </div>
@@ -63,18 +63,18 @@
                                 <div class="form-group d-sm-flex justify-content-sm-between align-items-sm-center text-center text-sm-left">
                                     <div class="custom-control custom-checkbox custom-control-primary">
                                         <input type="checkbox" class="custom-control-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                        <label class="custom-control-label" for="remember">Запомнить Меня</label>
+                                        <label class="custom-control-label" for="remember">{{ t('Запомнить Меня') }}</label>
                                     </div>
                                     @if (Route::has('password.request'))
                                         <div class="font-w600 font-size-sm py-1">
-                                            <a href="{{ route('password.request') }}">Забыли пароль?</a>
+                                            <a href="{{ route('password.request') }}"> {{ t('Забыли пароль?') }}</a>
                                         </div>
                                     @endif
 
                                 </div>
                                 <div class="form-group text-center">
                                     <button type="submit" class="btn btn-hero-primary">
-                                        <i class="fa fa-fw fa-sign-in-alt mr-1"></i> Вход
+                                        <i class="fa fa-fw fa-sign-in-alt mr-1"></i> {{ t('Вход') }}
                                     </button>
                                 </div>
                             </form>

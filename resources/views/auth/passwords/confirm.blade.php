@@ -11,16 +11,16 @@
                     <div class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-6 bg-white">
                         @if(session('status'))
                             <div class="alert alert-success" role="alert">
-                                <p class="mb-0">{{ session('status') }}</p>
+                                <p class="mb-0">{{ t(session('status')) }}</p>
                             </div>
-                    @endif
+                        @endif
 
                     <!-- Header -->
                         <div class="mb-2 text-center">
                             <a class="link-fx font-w700 font-size-h1" href="/">
                                 <span class="text-dark">{{ config('app.name') }}</span>
                             </a>
-                            <p class="text-uppercase font-w700 font-size-sm text-muted">Пожалуйста, подтвердите ваш пароль, прежде чем продолжить.</p>
+                            <p class="text-uppercase font-w700 font-size-sm text-muted">{{ t('Пожалуйста, подтвердите ваш пароль, прежде чем продолжить.') }}</p>
                         </div>
                         <!-- END Header -->
 
@@ -31,10 +31,10 @@
                             @csrf
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Действующий Пароль">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="{{t('Действующий Пароль')}}">
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>{{ t($message) }}</strong>
                                     </span>
                                     @enderror
                                     <div class="input-group-append">
@@ -47,14 +47,14 @@
                             <div class="form-group text-center">
                                 @if (Route::has('password.request'))
                                     <div class="font-w600 font-size-sm py-1">
-                                        <a href="{{ route('password.request') }}">Забыли пароль?</a>
+                                        <a href="{{ route('password.request') }}">{{ t('Забыли пароль?') }}</a>
                                     </div>
                                 @endif
 
                             </div>
                             <div class="form-group text-center">
                                 <button type="submit" class="btn btn-hero-warning">
-                                    <i class="fa fa-fw fa-reply mr-1"></i> Подтвердить Пароль
+                                    <i class="fa fa-fw fa-reply mr-1"></i> {{ t('Подтвердить Пароль') }}
                                 </button>
                             </div>
                         </form>

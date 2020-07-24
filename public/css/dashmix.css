@@ -79,7 +79,7 @@ ul ol {
 }
 
 dt {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 dd {
@@ -324,7 +324,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 1.375rem;
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   color: #171717;
 }
@@ -488,7 +488,7 @@ kbd {
 kbd kbd {
   padding: 0;
   font-size: 100%;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 pre {
@@ -2661,7 +2661,7 @@ textarea.form-control {
 
 .btn {
   display: inline-block;
-  font-weight: 600;
+  font-weight: 500;
   color: #495057;
   text-align: center;
   vertical-align: middle;
@@ -4678,7 +4678,7 @@ input[type="button"].btn-block {
   display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 75%;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
@@ -4876,7 +4876,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .alert-link {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .alert-dismissible {
@@ -5449,7 +5449,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 .close {
   float: right;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
@@ -11333,7 +11333,7 @@ body {
 
 b,
 strong {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 a {
@@ -11401,7 +11401,7 @@ p.story {
 }
 
 label {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .font-size-h1 {
@@ -11535,7 +11535,7 @@ small,
 }
 
 .table thead th {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .table-vcenter th,
@@ -13033,7 +13033,7 @@ small,
 }
 
 .nav-link {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .nav-pills .nav-link:hover, .nav-pills .nav-link:focus {
@@ -13139,7 +13139,7 @@ small,
 }
 
 .page-link {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .page-link:focus {
@@ -14635,7 +14635,7 @@ a.block.block-themed .btn-block-option:focus,
   padding-top: 1.75rem;
   padding-bottom: .25rem;
   font-size: .8125rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   letter-spacing: .0625rem;
   color: #869099;
@@ -14663,7 +14663,7 @@ a.block.block-themed .btn-block-option:focus,
   margin: 1px 0;
   min-height: 2.25rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25rem;
   color: #495057;
   border-radius: 0.2rem;
@@ -15144,7 +15144,7 @@ a.block.block-themed .btn-block-option:focus,
   margin-bottom: .25rem;
   padding: .5rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   background-color: #a5ccf0;
   border-right: 0.125rem dashed rgba(0, 0, 0, 0.15);
   -webkit-transition: -webkit-transform .3s ease-out;
@@ -15535,7 +15535,7 @@ a.item.item-link-pop:active {
   height: 2rem;
   line-height: 2rem;
   z-index: 5;
-  font-weight: 600;
+  font-weight: 500;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
@@ -28028,7 +28028,7 @@ readers do not read off random characters that represent icons */
   margin: 4rem 0;
   font-size: 1rem;
   font-style: italic;
-  font-weight: 600;
+  font-weight: 500;
   color: #495057;
 }
 
@@ -28076,7 +28076,7 @@ table.dataTable thead .sorting_desc_disabled:after {
   right: .375rem;
   bottom: .75rem;
   font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
-  font-weight: 600;
+  font-weight: 500;
   opacity: .4;
 }
 
@@ -28135,7 +28135,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .fc-bootstrap4 .fc-event {
   padding-left: .25rem;
   padding-right: .125rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #212529;
   border: 1px solid #a5ccf0;
   border-radius: 0;
@@ -28154,7 +28154,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   padding-top: .375rem;
   padding-bottom: .375rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   background-color: #f9fafc;
 }
@@ -28397,7 +28397,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   line-height: 1.375rem;
   color: #fff;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 500;
   background-color: #0665d0;
   border: none;
   border-radius: 0.25rem;
@@ -28511,7 +28511,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .slick-slider .slick-prev::before,
 .slick-slider .slick-next::before {
   font-family: 'Font Awesome 5 Free', 'Font Awesome 5 Pro';
-  font-weight: 600;
+  font-weight: 500;
   font-size: 28px;
   line-height: 28px;
   color: #054d9e;

@@ -14,7 +14,7 @@
                             Creative agency, corporate and portfolio HTML Template</h1>
 
                         <a class="sveetlo-button btn-large btn-transparent wow slideFadeInUp" href="#" @guest data-toggle="modal" data-target="#buy-product-modal" @else onclick="document.getElementById('buy-form').submit()" @endguest><span
-                                class="button-text">Оплатить</span>
+                                class="button-text">{{ t('Оплатить') }}</span>
                             <span class="far fa-shopping-cart"> </span>
                         </a> <br><br><br>
 
