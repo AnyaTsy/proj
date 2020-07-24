@@ -6,6 +6,7 @@ use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Code;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
@@ -54,6 +55,8 @@ class Lecture extends Resource
             Number::make('Order')->sortable(),
             Text::make('Time')->hideFromIndex(),
             Textarea::make('Description')->hideFromIndex(),
+            Boolean::make('Use Frame', 'is_frame')->sortable(),
+            Number::make('Frame Height', 'frame_height')->hideFromIndex()->sortable(),
             Code::make('Content', 'content')
                 ->hideFromIndex()->nullable(),
             Files::make('Files', 'multi_files_collection')

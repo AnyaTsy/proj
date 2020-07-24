@@ -141,11 +141,25 @@
         <!-- END Horizontal Navigation - Hover Centered -->
 
         <!-- Dummy content -->
-        <div class="block block-rounded block-bordered d-none d-lg-block">
+        <div class="block block-rounded block-bordered d-lg-block">
             <div class="block-content">
                 <div :style="showElement == 'lecture' ? '' : 'display: none'">
-                @include($lecture->view_name)
-                <!-- Files Tab Content -->
+                    @if($lecture->is_frame)
+                        <iframe id="iframe-new"
+                                src="/frame/{{$lecture->id}}"
+                                style="width: 100%; height: {{$lecture->frame_height}}px"
+                                allowfullscreen="allowfullscreen"
+                                frameBorder="0"
+                                mozallowfullscreen="mozallowfullscreen"
+                                msallowfullscreen="msallowfullscreen"
+                                oallowfullscreen="oallowfullscreen"
+                                webkitallowfullscreen="webkitallowfullscreen">
+
+                        </iframe>
+                @else
+                    @include($lecture->view_name)
+                @endif
+                <!-- Files Content -->
                     <div class="gallery editable" slot="value">
                         <div class="gallery-list clearfix">
                             @foreach($lecture->getMedia('multi_files_collection') as $file)
@@ -208,7 +222,8 @@
                 <div :style="showElement == 'action' ? '' : 'display: none'">
                     <div class="progress push">
                         <input type="hidden" id="progress-bar-value" class="js-bar-randomize">
-                        <div class="progress-bar" role="progressbar" style="width: {{$lecture->getProgress()}}%;" aria-valuenow="{{$lecture->getProgress()}}"
+                        <div class="progress-bar" role="progressbar" style="width: {{$lecture->getProgress()}}%;"
+                             aria-valuenow="{{$lecture->getProgress()}}"
                              aria-valuemin="0" aria-valuemax="100">
                             <span class="font-size-sm font-w600">{{$lecture->getProgress()}}%</span>
                         </div>
@@ -217,7 +232,8 @@
                         <div class="col-md-6">
                             <div class="custom-control custom-block custom-control-success">
                                 <input type="checkbox" class="custom-control-input" id="lecture-checkbox"
-                                       name="lecture-checkbox" @change="saveAction('lecture', {{$lecture->id}})" @if($lecture->checkForInteraction('lecture')) checked @endif>
+                                       name="lecture-checkbox" @change="saveAction('lecture', {{$lecture->id}})"
+                                       @if($lecture->checkForInteraction('lecture')) checked @endif>
                                 <label class="custom-control-label" for="lecture-checkbox">
                                                     <span class="d-block text-center">
                                                         <i class="fas fa-book fa-2x mb-2 text-black-50"></i><br>
@@ -233,7 +249,9 @@
                             <div class="col-md-6">
                                 <div class="custom-control custom-block custom-control-success">
                                     <input type="checkbox" class="custom-control-input" id="task-{{$k}}-checkbox"
-                                           name="task-{{$k}}-checkbox" @change="saveAction('task-{{$task->id}}', {{$lecture->id}})" @if($lecture->checkForInteraction('task-' . $task->id)) checked @endif>
+                                           name="task-{{$k}}-checkbox"
+                                           @change="saveAction('task-{{$task->id}}', {{$lecture->id}})"
+                                           @if($lecture->checkForInteraction('task-' . $task->id)) checked @endif>
                                     <label class="custom-control-label" for="task-{{$k}}-checkbox">
                                                     <span class="d-block text-center">
                                                         <i class="fas fa-tasks fa-2x mb-2 text-black-50"></i><br>

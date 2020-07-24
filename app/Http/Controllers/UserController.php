@@ -51,7 +51,17 @@ class UserController extends Controller
      */
     public function showSupportPage()
     {
-        return view('app.support');
+        return view('app.support.support');
+    }
+
+    /**
+     * Show the instructions page.
+     *
+     * @return mixed
+     */
+    public function showInstructionsPage()
+    {
+        return view('app.support.instructions');
     }
 
     /**

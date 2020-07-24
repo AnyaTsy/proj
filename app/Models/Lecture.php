@@ -18,7 +18,7 @@ class Lecture extends FileModel implements HasMedia
      *
      * @var array
      */
-    protected $fillable = [ 'file_name', 'view_name', 'order', 'description', 'name', 'slug', 'product_id', 'time'];
+    protected $fillable = [ 'file_name', 'view_name', 'order', 'description', 'name', 'slug', 'product_id', 'time', 'is_frame', 'frame_height'];
 
     /**
      * The location of the place where file should be stored.
