@@ -6,9 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Lang;
 
-class ResetPasswordNotificationAfterPurchase extends Notification
+class ResetPasswordNotification extends Notification
 {
     /**
      * The password reset token.
@@ -16,27 +15,6 @@ class ResetPasswordNotificationAfterPurchase extends Notification
      * @var string
      */
     public $token;
-
-    /**
-     * The order transaction id.
-     *
-     * @var string
-     */
-    public $transaction;
-
-    /**
-     * The user's language.
-     *
-     * @var string
-     */
-    public $lang;
-
-    /**
-     * The product.
-     *
-     * @var string
-     */
-    public $product;
 
     /**
      * The callback that should be used to create the reset password URL.
@@ -56,15 +34,11 @@ class ResetPasswordNotificationAfterPurchase extends Notification
      * Create a notification instance.
      *
      * @param  string  $token
-     * @param  string  $transaction
      * @return void
      */
-    public function __construct($token, $transaction, $lang, $product)
+    public function __construct($token)
     {
         $this->token = $token;
-        $this->transaction = $transaction;
-        $this->lang = $lang;
-        $this->product = $product;
     }
 
     /**
@@ -100,12 +74,10 @@ class ResetPasswordNotificationAfterPurchase extends Notification
         }
 
         $user = $notifiable;
-        $transaction = $this->transaction;
-        $lang = $this->lang;
-        $product = $this->product;
+        $lang = lang();
         return (new MailMessage)
-            ->view('emails.purchase_welcome_instructions', compact('url', 'user', 'transaction', 'product', 'lang'))
-            ->subject( $notifiable->name . ', ' . t('Спасибо за оплату!', 1, $lang));
+            ->view('emails.auth.password_reset', compact('url', 'user', 'lang'))
+            ->subject( t('Сброс пароля', 1, $lang));
     }
 
     /**

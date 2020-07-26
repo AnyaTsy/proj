@@ -52,7 +52,7 @@ class NotificationJob implements ShouldQueue
     public function __construct(string $view, array $data, string $to, string $subject = null)
     {
         $this->from = $from ?? config('app.name');
-        $this->subject = $subject ?? config('app.name') . t(': Спасибо за обращение');
+        $this->subject = $subject ?? t(': Спасибо за обращение');
         $this->to = $to;
         $this->view = $view;
         $this->data = $data;

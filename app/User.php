@@ -4,8 +4,8 @@ namespace App;
 
 use App\Models\Payment;
 use App\Models\Product;
+use App\Notifications\ResetPasswordNotification;
 use App\Notifications\ResetPasswordNotificationAfterPurchase;
-use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
@@ -126,8 +126,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function sendPasswordResetNotification($token)
     {
-        parent::sendPasswordResetNotification($token);
-        //$this->notify(new ResetPasswordNotification($token));
+        $this->notify(new ResetPasswordNotification($token));
     }
 
     /**
