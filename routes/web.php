@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 // Landing page
 Route::get('/test', function () {
-    return view('emails.purchase_welcome_instructions', ['user' => \App\User::first(), 'transaction' => '1212u43riu3248', 'lang' => lang(), 'product' => \App\Models\Product::first()]);
+    return view('emails.user_notification', ['name' => 'Svetlana Manicheva', 'email' => 'conalaa20@gmail.com', 'lang' => lang(), 'userMessage' => 'В разных странах растут разные деревья. В белорусских лесах распространены такие деревья, как береза, осина, ель, дуб, ольха.  У воды обычно растут плакучие ивы и могучие вязы. В странах с более мягким климатом часто встречаются стройные кипарисы. У славян кипарис можно встретить на Крымском полуострове. А в тропических джунглях растут кокосовые пальмы, обвитые множеством длинных и крепких лиан.']);
 });
 
 

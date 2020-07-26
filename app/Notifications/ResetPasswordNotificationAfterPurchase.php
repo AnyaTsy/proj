@@ -105,7 +105,7 @@ class ResetPasswordNotificationAfterPurchase extends Notification
         $product = $this->product;
         return (new MailMessage)
             ->view('emails.purchase_welcome_instructions', compact('url', 'user', 'transaction', 'product', 'lang'))
-            ->subject($notifiable->name . ', ' . 'Спасибо за оплату!');
+            ->subject(config('app.name') . ': ' . $notifiable->name . ', ' . t('Спасибо за оплату!', 1, $lang));
     }
 
     /**
