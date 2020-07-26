@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 // Landing page
 Route::get('/test', function () {
-    return view('emails.auth.password_reset', ['user' => \App\User::first(), 'url' => '1212u43riu3248', 'lang' => lang()]);
+    return view('emails.auth.email_verify', ['user' => \App\User::first(), 'url' => '1212u43riu3248', 'lang' => lang()]);
 });
 
 

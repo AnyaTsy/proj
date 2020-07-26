@@ -4,6 +4,7 @@ namespace App;
 
 use App\Models\Payment;
 use App\Models\Product;
+use App\Notifications\EmailVerifyNotification;
 use App\Notifications\ResetPasswordNotification;
 use App\Notifications\ResetPasswordNotificationAfterPurchase;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -136,8 +137,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function sendEmailVerificationNotification()
     {
-        parent::sendEmailVerificationNotification();
-        //$this->notify(new ResetPasswordNotification($token));
+        $this->notify(new EmailVerifyNotification());
     }
 
     /**
