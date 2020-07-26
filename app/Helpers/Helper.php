@@ -21,7 +21,7 @@ if (!function_exists('app_languages_from_file')) {
  * @return mixed
  */
 if (!function_exists('t')) {
-    function t(string $text, $caseInsensitive = true)
+    function t(string $text, $caseInsensitive = true, $lang = false)
     {
         $initialText = $text;
         $text = $caseInsensitive ? mb_strtolower(trim($text)) : $text;
@@ -32,7 +32,7 @@ if (!function_exists('t')) {
         } catch (Exception $exception) {
         }
 
-        return $textModel ? $textModel->text : $initialText;
+        return $textModel ? ($lang ? $textModel->getTranslation('text', $lang) : $textModel->text) : $initialText;
     }
 }
 

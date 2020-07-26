@@ -25,6 +25,20 @@ class ResetPasswordNotificationAfterPurchase extends Notification
     public $transaction;
 
     /**
+     * The user's language.
+     *
+     * @var string
+     */
+    public $lang;
+
+    /**
+     * The product.
+     *
+     * @var string
+     */
+    public $product;
+
+    /**
      * The callback that should be used to create the reset password URL.
      *
      * @var \Closure|null
@@ -45,10 +59,12 @@ class ResetPasswordNotificationAfterPurchase extends Notification
      * @param  string  $transaction
      * @return void
      */
-    public function __construct($token, $transaction)
+    public function __construct($token, $transaction, $lang, $product)
     {
         $this->token = $token;
         $this->transaction = $transaction;
+        $this->lang = $lang;
+        $this->product = $product;
     }
 
     /**
@@ -85,13 +101,11 @@ class ResetPasswordNotificationAfterPurchase extends Notification
 
         $user = $notifiable;
         $transaction = $this->transaction;
+        $lang = $this->lang;
+        $product = $this->product;
         return (new MailMessage)
-            ->view('emails.purchase_welcome_instructions', compact('url', 'user', 'transaction'))
-            ->subject(Lang::get('Welcome!!!!!!'))
-            ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
-            ->action(Lang::get('Reset Password'), $url)
-            ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(Lang::get('If you did not request a password reset, no further action is required.'));
+            ->view('emails.purchase_welcome_instructions', compact('url', 'user', 'transaction', 'product', 'lang'))
+            ->subject($notifiable->name . ', ' . 'Спасибо за оплату!');
     }
 
     /**

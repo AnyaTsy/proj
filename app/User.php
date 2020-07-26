@@ -149,6 +149,6 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     public function sendPasswordResetNotificationAfterPurchase($tokenAndId)
     {
-        $this->notify(new ResetPasswordNotificationAfterPurchase($tokenAndId['token'], $tokenAndId['transaction']));
+        $this->notify(new ResetPasswordNotificationAfterPurchase($tokenAndId['token'], $tokenAndId['transaction'], $tokenAndId['lang'], $tokenAndId['product']));
     }
 }

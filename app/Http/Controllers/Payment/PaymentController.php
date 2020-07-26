@@ -87,6 +87,7 @@ class PaymentController extends Controller
         $payment = Payment::whereId($data['order_id'])->first();
         if(!$payment) throw new \Exception(t('Извините, но мы не можем найти ваш заказ. Пожалуйста, свяжитесь с нашей службой поддержки, если у вас возникли проблемы.'));
         if ($payment && $data['status'] == 'success') {
+            $product = $payment->product;
             if($payment->status == 'success') return view('payments.thanks_purchase', ['status' => 1]);
             $transaction = $data['transaction_id'];
             $payment->update(['status' => 'success', 'payment_id' => $transaction]);
@@ -96,14 +97,14 @@ class PaymentController extends Controller
                 if(!$user) $user = User::create(['name' => '', 'email' => $data['email'], 'password' => bcrypt('password_' . time()), 'is_new' => 1]);
                 if($user->is_new) {
                     $token = app('auth.password.broker')->createToken($user);
-                    NotifyUserJob::dispatch($user->id, 'sendPasswordResetNotificationAfterPurchase', ['token' => $token, 'transaction' => $transaction, 'lang' => lang()]);
+                    NotifyUserJob::dispatch($user->id, 'sendPasswordResetNotificationAfterPurchase', ['token' => $token, 'transaction' => $transaction, 'lang' => lang(), 'product' => $product]);
                 }
                 else {
-                    NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction, 'lang' => lang()], $user->email, t('Спасибо за оплату!'));
+                    NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction, 'lang' => lang(), 'product' => $product], $user->email, t('Спасибо за оплату!'));
                 }
             } else {
                 $user = auth()->user();
-                NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction, 'lang' => lang()], $user->email, t('Спасибо за оплату!'));
+                NotificationJob::dispatch('emails.purchase_welcome_instructions', ['user' => $user, 'transaction' => $transaction, 'lang' => lang(), 'product' => $product], $user->email, t('Спасибо за оплату!'));
             }
             NotificationJob::dispatch('emails.admin_purchase_notification', ['user' => $user, 'transaction' => $transaction], 'manichevassvetlana@gmail.com', 'New Order');
             $status = 1;

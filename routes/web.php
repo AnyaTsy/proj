@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Landing page
+Route::get('/test', function () {
+    return view('emails.purchase_welcome_instructions', ['user' => \App\User::first(), 'transaction' => '1212u43riu3248', 'lang' => lang(), 'product' => \App\Models\Product::first()]);
+});
+
+
+// Landing page
 Route::get('/', function () {
     return view('app.landing');
 });
@@ -31,7 +37,13 @@ Route::get('/language/{lang}', 'TranslateController@changeLanguage');
 // Show the instructions page
 Route::get('/instructions', 'UserController@showInstructionsPage');
 // Show the terms page
-Route::get('/terms', 'UserController@showTermsPage');
+Route::get('/terms', 'UserController@showTermsPage'); // TODO
+// Show the offer page
+Route::get('/offer', 'UserController@showOfferPage'); // TODO
+// Show unsubscribe user page
+Route::get('/user/{user}/unsubscribe', 'UserController@showUnsubscribePage'); // TODO
+// Unsubscribe the user
+Route::post('/user/{user}/unsubscribe', 'UserController@unsubscribeUser'); // TODO
 // Show the support page
 Route::get('/support', 'UserController@showSupportPage');
 // Send support request

@@ -95,7 +95,7 @@
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
             <ul class="nav-main">
-                <li class="nav-main-heading">{{ t('Обучение') }}</li>
+                <li class="nav-main-heading">{{ t('Обучение') }} {{ lang() }}</li>
                 <li class="nav-main-item{{ request()->is('my-products/*') || request()->is('my-products') ? ' active' : '' }}">
                     <a class="nav-main-link" href="/my-products">
                         <i class="nav-main-link-icon fas fa-project-diagram"></i>

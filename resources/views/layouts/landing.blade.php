@@ -138,8 +138,8 @@
                                                                 <span class="focus-border"></span>
                                                             </div>
                                                             <div class="form-group text-center">
-                                                                <div class="custom-control custom-checkbox custom-control-primary">
-                                                                    <input type="checkbox" class="custom-control-input" id="signup-terms" name="signup-terms" required>
+                                                                <div class="form-group">
+                                                                    <input type="checkbox" class="" id="signup-terms" name="signup-terms" required>
                                                                     <label class="custom-control-label" for="signup-terms">Нажимая кнопку Регистрация, вы принимаете <a target="_blank" class="font-w600 font-size-sm" href="/terms">Условия, Политику использования данных</a></label>
                                                                 </div>
                                                             </div>
