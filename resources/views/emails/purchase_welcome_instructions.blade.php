@@ -28,7 +28,7 @@
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 20px; padding-left: 20px; padding-top: 10px; padding-bottom: 0px; font-family: Tahoma, sans-serif"><![endif]-->
                             <div style="color:#191919;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.5;padding-top:10px;padding-right:20px;padding-bottom:0px;padding-left:20px;">
                                 <div style="line-height: 1.5; font-size: 12px; color: #191919; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px;">
-                                    <p style="font-size: 28px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 42px; margin: 0;"><span style="font-size: 20px; color: #34495e;"><strong> <span>{{ t('Добро пожаловать на курс', 1, $lang) }} "{{$product->getTranslation('name', $lang)}}"! </span></strong></span></p>
+                                    <p style="font-size: 28px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 42px; margin: 0;"><span style="font-size: 20px; color: #34495e;"><strong> <span>{{ t('Добро пожаловать на курс', 1, $lang) }} "{{$product->name}}"! </span></strong></span></p>
                                     <p style="font-size: 14px; line-height: 2; word-break: break-word; text-align: center; mso-line-height-alt: 28px; margin: 0; color: #555555;">{{ t('Номер заказа:' , 1, $lang) }} {{$transaction}}</p>
                                 </div>
                             </div>

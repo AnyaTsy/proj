@@ -8,11 +8,9 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Support\Facades\Storage;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\Translatable\HasTranslations;
 
 class Product extends Model
 {
-    use HasTranslations;
 
     /**
      * The attributes that are mass assignable.
@@ -20,13 +18,6 @@ class Product extends Model
      * @var array
      */
     protected $fillable = ['name', 'slug', 'description', 'sale_price', 'default_price', 'sale_end', 'label', 'main_image'];
-
-    /**
-     * The attributes that are translatable.
-     *
-     * @var array
-     */
-    public $translatable = ['name', 'description', 'label'];
 
     /**
      * The attributes that should be cast.
@@ -78,7 +69,7 @@ class Product extends Model
      */
     public function getLecturesCountNameAttribute()
     {
-        return ($this->lectures_count == 1 || ((strlen(strval($this->lectures_count)) <= 1 || strval($this->lectures_count)[-2] != 1) && strval($this->lectures_count)[-1] == 1)) ? t('Занятиe') : (in_array($this->lectures_count, [2, 3, 4]) || ((strlen(strval($this->lectures_count)) <= 1 || strval($this->lectures_count)[-2] != 1) && (in_array($this->lectures_count, [2, 3, 4]))) ? t('Занятия') : t('Занятий')); //Задания
+        return $this->lectures_count == 1 ? 'Lecture' : 'Lectures';
     }
 
     /**
@@ -88,7 +79,7 @@ class Product extends Model
      */
     public function getTasksCountNameAttribute()
     {
-        return ($this->tasks_count == 1 || ((strlen(strval($this->tasks_count)) <= 1 || strval($this->tasks_count)[-2] != 1) && strval($this->tasks_count)[-1] == 1)) ?  t('Заданиe') : (in_array($this->tasks_count, [2, 3, 4]) || ((strlen(strval($this->tasks_count)) <= 1 || strval($this->tasks_count)[-2] != 1) && (in_array($this->tasks_count, [2, 3, 4]))) ?  t('Задания') :  t('Заданий')); //
+        return $this->tasks_count == 1 ? 'Task' : 'Tasks';
     }
 
     /**

@@ -21,7 +21,7 @@
                 <form action="{{route('profile')}}" method="POST">
                 @csrf
                 <!-- Vital Info -->
-                    <h2 class="content-heading pt-0">{{ t('Настройки') }}</h2>
+                    <h2 class="content-heading pt-0">Settings</h2>
                     <div class="row push">
                         <div class="col-lg-4">
 
@@ -29,28 +29,28 @@
                         <div class="col-lg-8 col-xl-5">
                             <div class="form-group">
                                 <label for="dm-project-edit-name">
-                                    {{ t('Имя') }} <span class="text-danger">*</span>
+                                    Name <span class="text-danger">*</span>
                                 </label>
                                 <input type="text" class="form-control" id="name" name="name"
                                        value="{{auth()->user()->name}}" required>
                             </div>
                             <div class="form-group">
                                 <label for="dm-project-edit-name">
-                                    {{ t('Электронная Почта') }} <span class="text-danger">*</span>
+                                    Email <span class="text-danger">*</span>
                                 </label>
                                 <input type="email" class="form-control" id="email" name="email"
                                        value="{{auth()->user()->email}}" required>
                             </div>
                             <div class="form-group">
                                 <label for="dm-project-edit-name">
-                                    {{ t('Текущий пароль') }} <span class="text-danger"></span>
+                                    Current Password <span class="text-danger"></span>
                                 </label>
                                 <input type="password" class="form-control" id="current_password"
                                        name="current_password">
                             </div>
                             <div class="form-group">
                                 <label for="dm-project-edit-name">
-                                    {{ t('Новый пароль') }} <span class="text-danger"></span>
+                                    New Password <span class="text-danger"></span>
                                 </label>
                                 <input type="password" class="form-control" id="new_password" name="new_password">
                             </div>
@@ -63,7 +63,7 @@
                         <div class="col-lg-8 col-xl-5 offset-lg-4">
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success">
-                                    <i class="fa fa-check-circle mr-1"></i> {{ t('Обновить информацию') }}
+                                    <i class="fa fa-check-circle mr-1"></i> Update Information
                                 </button>
                             </div>
                         </div>

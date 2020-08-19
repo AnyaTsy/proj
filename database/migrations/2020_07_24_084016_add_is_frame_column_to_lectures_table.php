@@ -15,6 +15,7 @@ class AddIsFrameColumnToLecturesTable extends Migration
     {
         Schema::table('lectures', function (Blueprint $table) {
             $table->boolean('is_frame')->default(0)->nullable();
+            $table->string('main_image')->nullable();
             $table->float('frame_height')->nullable();
         });
     }
@@ -29,6 +30,7 @@ class AddIsFrameColumnToLecturesTable extends Migration
         Schema::table('lectures', function (Blueprint $table) {
             $table->dropColumn('is_frame');
             $table->dropColumn('frame_height');
+            $table->dropColumn('main_image');
         });
     }
 }

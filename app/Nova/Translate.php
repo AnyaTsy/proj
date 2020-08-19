@@ -48,9 +48,7 @@ class Translate extends Resource
                 ->sortable()
                 ->creationRules('unique:translates,name')
                 ->updateRules('unique:translates,name,{{resourceId}}')->required(),
-            Translatable::make([
-                Text::make('Text', 'text'),
-            ]),
+            Text::make('Text', 'text'),
 
             Date::make('Created', 'created_at')->onlyOnIndex()->sortable(),
             Date::make('Updated', 'updated_at')->onlyOnIndex()->sortable(),

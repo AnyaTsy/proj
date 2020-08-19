@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        \Spatie\NovaTranslatable\Translatable::defaultLocales( app_languages_from_file() );
+        // \Spatie\NovaTranslatable\Translatable::defaultLocales( app_languages_from_file() );
     }
 
     /**

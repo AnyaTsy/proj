@@ -12,7 +12,7 @@
                     <div class="block-content block-content-full px-lg-5 px-xl-6 py-4 py-md-5 py-lg-6 bg-white">
                         @if(session('status'))
                             <div class="alert alert-success" role="alert">
-                                <p class="mb-0">{{ t(session('status')) }}</p>
+                                <p class="mb-0">{{ session('status') }}</p>
                             </div>
                          @endif
 
@@ -21,7 +21,7 @@
                             <a class="link-fx font-w700 font-size-h1" href="/">
                                 <span class="text-dark">{{ config('app.name') }}</span>
                             </a>
-                            <p class="text-uppercase font-w700 font-size-sm text-muted">{{ t('Восстановление пароля') }}</p>
+                            <p class="text-uppercase font-w700 font-size-sm text-muted">Update Password</p>
                         </div>
                         <!-- END Header -->
 
@@ -33,7 +33,7 @@
                             <input type="hidden" name="token" value="{{ $token }}">
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus placeholder="{{ t('Электронная Почта') }}">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus placeholder="Email">
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                             <i class="fa fa-user-circle"></i>
@@ -41,14 +41,14 @@
                                     </div>
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ t($message) }}</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="{{ t('Новый Пароль') }}">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="New Password">
                                     <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="fa fa-asterisk"></i>
@@ -56,14 +56,14 @@
                                     </div>
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ t($message) }}</strong>
+                                        <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="input-group">
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="{{ t('Подтверждение Пароля') }}">
+                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Password Confirmation">
                                     <div class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="fa fa-asterisk"></i>
@@ -73,7 +73,7 @@
                             </div>
                             <div class="form-group text-center">
                                 <button type="submit" class="btn btn-hero-warning">
-                                    <i class="fa fa-fw fa-reply mr-1"></i> {{ t('Сбросить Пароль') }}
+                                    <i class="fa fa-fw fa-reply mr-1"></i> Update Password
                                 </button>
                             </div>
                         </form>

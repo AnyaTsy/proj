@@ -13,7 +13,7 @@
                         <a class="link-fx text-primary font-w700 font-size-h1" href="/">
                             {{ config('app.name') }}
                         </a>
-                        <p class="text-uppercase font-w700 font-size-sm text-muted">{{ t('Служба Поддержки') }}</p>
+                        <p class="text-uppercase font-w700 font-size-sm text-muted">Support</p>
                     </div>
                     <!-- END Header -->
 
@@ -39,19 +39,19 @@
                                         <div class="row">
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <label for="username">{{ t('Ваше Имя') }}</label>
+                                                    <label for="username">Name</label>
                                                     <input class="form-control form-control-alt" required="" name="name" type="text" id="username">
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
-                                                    <label for="useremail">{{ t('Электронный адрес') }}</label>
+                                                    <label for="useremail">Email</label>
                                                     <input class="form-control form-control-alt" required="" name="email" type="text" id="useremail">
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group">
-                                                    <label for="formmessage">{{ t('Сообщение') }}</label>
+                                                    <label for="formmessage">Message</label>
                                                     <textarea class="form-control form-control-alt" name="message" cols="50" rows="10" id="formmessage" required></textarea>
                                                 </div>
                                             </div>
@@ -60,7 +60,7 @@
                                     <div class="col-lg-12">
                                         <div class="row">
                                             <div class="col-lg-12 text-right">
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light mt-2"><i class="mdi mdi-send"></i> {{ t('Отправить') }}
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light mt-2"><i class="mdi mdi-send"></i> Send
                                                 </button>
                                             </div>
                                         </div>

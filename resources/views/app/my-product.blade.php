@@ -17,13 +17,13 @@
             <div class="content content-full content-top">
                 <div class="py-4 text-center">
                     <h1 class="font-w700 text-white mb-2">
-                        {{$product->getTranslation('name', lang())}}
+                        {{$product->name}}
                     </h1>
                     <h2 class="font-size-sm mb-3 font-w400 text-white-75 font-italic">
-                        {{$product->getTranslation('description', lang())}}
+                        {{$product->description}}
                     </h2>
                     <a class="btn btn-hero-primary" href="/my-products/{{$product->slug}}/{{$product->lectures()->first()->slug}}" data-toggle="click-ripple">
-                        <i class="fa fa-play mr-1"></i> {{ t('Начать Курс') }}
+                        <i class="fa fa-play mr-1"></i> Start Learning
                     </a>
                 </div>
             </div>
@@ -48,16 +48,16 @@
                         <td>
                             <div class="py-4">
                                 <div class="font-size-sm font-w700 text-uppercase mb-2">
-                                    <span class="text-muted mr-3">{{ t('Лекция') }} {{$lecture->order}}</span>
+                                    <span class="text-muted mr-3">Lesson {{$lecture->order}}</span>
                                     <span class="text-primary">
                                                         <i class="fa fa-clock"></i> {{$lecture->time}}
                                                     </span>
                                 </div>
                                 <a class="link-fx h4 mb-2 d-inline-block text-dark" href="/my-products/{{$product->slug}}/{{$lecture->slug}}">
-                                    {{$lecture->getTranslation('name', lang())}}
+                                    {{$lecture->name}}
                                 </a>
                                 <p class="text-muted mb-0">
-                                    {{$lecture->getTranslation('description', lang())}}
+                                    {{$lecture->description}}
                                 </p>
                             </div>
                         </td>

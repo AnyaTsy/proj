@@ -28,8 +28,8 @@
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 20px; padding-left: 20px; padding-top: 10px; padding-bottom: 0px; font-family: Tahoma, sans-serif"><![endif]-->
                             <div style="color:#191919;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.5;padding-top:10px;padding-right:20px;padding-bottom:0px;padding-left:20px;">
                                 <div style="line-height: 1.5; font-size: 12px; color: #191919; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px;">
-                                    <p style="font-size: 28px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 42px; margin: 0;"><span style="font-size: 20px; color: #34495e;"><strong> <span>{{ t('Здравствуйте', 1, $lang) }}, {{$user->name}} ! </span></strong></span></p>
-                                    <p style="font-size: 14px; line-height: 2; word-break: break-word; text-align: center; mso-line-height-alt: 28px; margin: 0; color: #555555;">{{ t('Вы получили это письмо, потому что мы получили запрос на сброс пароля для вашей учетной записи.', 1, $lang) }}</p>
+                                    <p style="font-size: 28px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 42px; margin: 0;"><span style="font-size: 20px; color: #34495e;"><strong> <span>{{ t('Hello', 1, $lang) }}, {{$user->name}} ! </span></strong></span></p>
+                                    <p style="font-size: 14px; line-height: 2; word-break: break-word; text-align: center; mso-line-height-alt: 28px; margin: 0; color: #555555;">{{ t('You are receiving this email because we received a password reset request for your account.', 1, $lang) }}</p>
                                 </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -104,7 +104,7 @@
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 40px; padding-top: 0px; padding-bottom: 10px; font-family: Tahoma, sans-serif"><![endif]-->
                             <div style="color:#34495e;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:2;padding-top:0px;padding-right:10px;padding-bottom:10px;padding-left:40px;">
                                 <div style="line-height: 2; font-size: 12px; color: #34495e; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 24px;">
-                                    <p style="font-size: 20px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 40px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">{{ t('Сброс', 1, $lang) }}</span></strong></span></p>
+                                    <p style="font-size: 20px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 40px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">{{ t('Reset', 1, $lang) }}</span></strong></span></p>
                                 </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -112,9 +112,9 @@
                             <div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:2;padding-top:0px;padding-right:30px;padding-bottom:10px;padding-left:40px;">
                                 <div style="line-height: 2; font-size: 12px; color: #555555; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 24px;">
                                     <p style="font-size: 14px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 28px; margin: 0;">
-                                        {{ t('Срок действия ссылки для установки пароля истекает через', 1, $lang) }} {{config('auth.passwords.'.config('auth.defaults.passwords').'.expire')}} {{ t('минут', 1, $lang) }}.
+                                        {{ t('This password reset link will expire in ', 1, $lang) }} {{config('auth.passwords.'.config('auth.defaults.passwords').'.expire')}} {{ t('minutes', 1, $lang) }}.
 
-                                        {{ t('Если Вы не запрашивали сброс пароля, никаких дальнейших действий не требуется.', 1, $lang) }}
+                                        {{ t('If you did not request a password reset, no further action is required.', 1, $lang) }}
                                     </p>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 45px; padding-top: 0px; padding-bottom: 10px; font-family: Tahoma, sans-serif"><![endif]-->
                             <div style="color:#a96b7d;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:2;padding-top:0px;padding-right:10px;padding-bottom:10px;padding-left:45px;">
                                 <div style="line-height: 2; font-size: 12px; color: #a96b7d; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 24px;">
-                                    <p style="font-size: 14px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 28px; margin: 0;"><span style="font-size: 14px;"><strong><span style=""><a href="{{$url}}" style="color: #aa6d7d; text-decoration: none;"><span style="">{{ t('Сбросить Пароль', 1, $lang) }} →</span></a></span></strong></span></p>
+                                    <p style="font-size: 14px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 28px; margin: 0;"><span style="font-size: 14px;"><strong><span style=""><a href="{{$url}}" style="color: #aa6d7d; text-decoration: none;"><span style="">{{ t('Reset Password', 1, $lang) }} →</span></a></span></strong></span></p>
                                 </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->

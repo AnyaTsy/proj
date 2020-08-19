@@ -10,7 +10,6 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Spatie\NovaTranslatable\Translatable;
 
 class Product extends Resource
 {
@@ -48,19 +47,13 @@ class Product extends Resource
         return [
             ID::make()->sortable(),
             Avatar::make('Main Image'),
-            Translatable::make([
-                Text::make('Name', 'name')
-                    ->sortable()->required(),
-            ]),
-            Translatable::make([
-                Text::make('Label', 'label')
-                    ->sortable()->required(),
-            ]),
+            Text::make('Name', 'name')
+                ->sortable()->required(),
+            Text::make('Label', 'label')
+                ->sortable()->required(),
             Text::make('Slug')->sortable(),
-            Translatable::make([
-                Textarea::make('Description')
-                    ->sortable()->required(),
-            ]),
+            Textarea::make('Description')
+                ->sortable()->required(),
             Number::make('Default Price')->sortable(),
             Number::make('Sale Price')->nullable()->hideFromIndex(),
             DateTime::make('Sale End')->nullable()->hideFromIndex(),

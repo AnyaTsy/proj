@@ -50,7 +50,7 @@ class EmailVerifyNotification extends Notification
         $user = $notifiable;
         return (new MailMessage)
             ->view('emails.auth.email_verify', compact('url', 'user', 'lang'))
-            ->subject(t('Подтвердите адрес электронной почты', 1, $lang))
+            ->subject(t('Confirm Email', 1, $lang))
             ->line(Lang::get('Please click the button below to verify your email address.'))
             ->action(Lang::get('Verify Email Address'), $verificationUrl)
             ->line(Lang::get('If you did not create an account, no further action is required.'));

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\File;
 if (!function_exists('app_languages_from_file')) {
     function app_languages_from_file()
     {
-        return ['ru', 'ua'];
+        return ['en'];
     }
 }
 
@@ -23,16 +23,7 @@ if (!function_exists('app_languages_from_file')) {
 if (!function_exists('t')) {
     function t(string $text, $caseInsensitive = true, $lang = false)
     {
-        $initialText = $text;
-        $text = $caseInsensitive ? mb_strtolower(trim($text)) : $text;
-        $textModel = \App\Models\Translate::where('name', $text)->first();
-
-        try {
-            if (!$textModel) \App\Models\Translate::create(['name' => $text, 'text' => $initialText]);
-        } catch (Exception $exception) {
-        }
-
-        return $textModel ? ($lang ? $textModel->getTranslation('text', $lang) : $textModel->text) : $initialText;
+        return $text;
     }
 }
 
@@ -44,6 +35,6 @@ if (!function_exists('t')) {
 if (!function_exists('lang')) {
     function lang()
     {
-        return str_replace('_', '-', app()->getLocale());
+        return 'en';
     }
 }

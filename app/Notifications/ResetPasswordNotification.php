@@ -77,7 +77,7 @@ class ResetPasswordNotification extends Notification
         $lang = lang();
         return (new MailMessage)
             ->view('emails.auth.password_reset', compact('url', 'user', 'lang'))
-            ->subject( t('Сброс пароля', 1, $lang));
+            ->subject( t('Password Reset', 1, $lang));
     }
 
     /**

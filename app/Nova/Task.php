@@ -52,10 +52,8 @@ class Task extends Resource
             BelongsTo::make('Lecture', 'lecture', Lecture::class),
             Code::make('Content', 'content')
                 ->hideFromIndex()->nullable(),
-            Files::make('Files Ru', 'multi_files_collection_ru')
+            Files::make('Files', 'multi_files_collection')
                 ->fullSize(),
-            Files::make('Files Ua', 'multi_files_collection_ua')
-                ->fullSize()
         ];
     }
 

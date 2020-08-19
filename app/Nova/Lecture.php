@@ -5,6 +5,7 @@ namespace App\Nova;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Files;
 use Ebess\AdvancedNovaMediaLibrary\Fields\Images;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Code;
@@ -13,7 +14,6 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Spatie\NovaTranslatable\Translatable;
 
 class Lecture extends Resource
 {
@@ -50,16 +50,12 @@ class Lecture extends Resource
     {
         return [
             ID::make()->sortable(),
+            Avatar::make('Main Image'),
             BelongsTo::make('Product', 'product', Product::class),
-            Translatable::make([
-                Text::make('Name', 'name')
-                    ->sortable()->required(),
-            ]),
-            Translatable::make([
-                Textarea::make('Description')
-                    ->sortable()->required(),
-            ]),
-
+            Text::make('Name', 'name')
+                ->sortable()->required(),
+            Textarea::make('Description')
+                ->sortable()->required(),
             Text::make('Slug')->sortable(),
             Number::make('Order')->sortable(),
             Text::make('Time')->hideFromIndex(),
@@ -67,10 +63,8 @@ class Lecture extends Resource
             Number::make('Frame Height', 'frame_height')->hideFromIndex()->sortable(),
             Code::make('Content', 'content')
                 ->hideFromIndex()->nullable(),
-            Files::make('Files Ru', 'multi_files_collection_ru')
+            Files::make('Files', 'multi_files_collection')
                 ->fullSize(),
-            Files::make('Files Ua', 'multi_files_collection_ua')
-                ->fullSize()
         ];
     }
 

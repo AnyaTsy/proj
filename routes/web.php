@@ -29,7 +29,7 @@ Route::get('/home', function () {
 
 /* App Settings Routes */
 // Change the language of the application
-Route::get('/language/{lang}', 'TranslateController@changeLanguage');
+
 /* End of App Settings Routes */
 
 

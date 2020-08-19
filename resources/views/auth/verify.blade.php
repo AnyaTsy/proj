@@ -7,20 +7,20 @@
             <div class="col-md-12">
                 <div class="block">
                     <div class="block-header block-header-default">
-                        <h3 class="block-title">{{ t('Подтверждение Электронной Почты') }}</h3>
+                        <h3 class="block-title">Verify Your Email Address</h3>
                     </div>
                     <div class="block-content">
                         @if (session('resent'))
                             <div class="alert alert-success" role="alert">
-                                {{ t('На ваш адрес электронной почты была отправлена новая ссылка для подтверждения.') }}
+                                {{ t('A fresh verification link has been sent to your email address.') }}
                             </div>
                         @endif
-                        {{ t('Прежде чем продолжить, проверьте свою электронную почту на наличие ссылки для подтверждения почты.') }}
+                        {{ t('Before proceeding, please check your email for a verification link.') }}
                             <br> <br>
-                        {{ t('Если вы не получили письмо') }}
+                        {{ t('If you did not receive the email') }}
                             <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                                 @csrf
-                                <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ t('нажмите здесь, чтобы запросить другое.') }}</button>
+                                <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ t('click here to request another') }}</button>
                             </form>
                             <br> <br>
 

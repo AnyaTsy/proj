@@ -28,7 +28,7 @@
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 20px; padding-left: 20px; padding-top: 10px; padding-bottom: 0px; font-family: Tahoma, sans-serif"><![endif]-->
                             <div style="color:#191919;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:1.5;padding-top:10px;padding-right:20px;padding-bottom:0px;padding-left:20px;">
                                 <div style="line-height: 1.5; font-size: 12px; color: #191919; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 18px;">
-                                    <p style="font-size: 28px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 42px; margin: 0;"><span style="font-size: 20px; color: #34495e;"><strong> <span>{{ t('Спасибо за ваш запрос', 1, $lang) }} , {{$name}} ! </span></strong></span></p>
+                                    <p style="font-size: 28px; line-height: 1.5; text-align: center; word-break: break-word; mso-line-height-alt: 42px; margin: 0;"><span style="font-size: 20px; color: #34495e;"><strong> <span>{{ t('Thanks for your request', 1, $lang) }} , {{$name}} ! </span></strong></span></p>
                                 </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -103,7 +103,7 @@
                             <!--[if mso]><table width="100%" cellpadding="0" cellspacing="0" border="0"><tr><td style="padding-right: 10px; padding-left: 40px; padding-top: 0px; padding-bottom: 10px; font-family: Tahoma, sans-serif"><![endif]-->
                             <div style="color:#34495e;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:2;padding-top:0px;padding-right:10px;padding-bottom:10px;padding-left:40px;">
                                 <div style="line-height: 2; font-size: 12px; color: #34495e; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 24px;">
-                                    <p style="font-size: 20px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 40px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">{{ t('Данные Запроса', 1, $lang) }}</span></strong></span></p>
+                                    <p style="font-size: 20px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 40px; margin: 0;"><span style="font-size: 20px;"><strong><span style="">{{ t('Request Data', 1, $lang) }}</span></strong></span></p>
                                 </div>
                             </div>
                             <!--[if mso]></td></tr></table><![endif]-->
@@ -111,9 +111,9 @@
                             <div style="color:#555555;font-family:Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif;line-height:2;padding-top:0px;padding-right:30px;padding-bottom:10px;padding-left:40px;">
                                 <div style="line-height: 2; font-size: 12px; color: #555555; font-family: Montserrat, Trebuchet MS, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Tahoma, sans-serif; mso-line-height-alt: 24px;">
                                     <p style="font-size: 14px; line-height: 2; word-break: break-word; text-align: left; mso-line-height-alt: 28px; margin: 0;">
-                                        <b>{{ t('Имя', 1, $lang) }} :</b> {{ $name }} <br>
-                                        <b>{{ t('Электронная почта', 1, $lang) }} :</b> {{ $email }} <br>
-                                       <b> {{ t('Сообщение', 1, $lang) }} : </b> <br>
+                                        <b>{{ t('Name', 1, $lang) }} :</b> {{ $name }} <br>
+                                        <b>{{ t('Email', 1, $lang) }} :</b> {{ $email }} <br>
+                                       <b> {{ t('Message', 1, $lang) }} : </b> <br>
                                         {{$userMessage}}
                                     </p>
                                 </div>
