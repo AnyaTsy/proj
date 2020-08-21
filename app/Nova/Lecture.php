@@ -51,6 +51,7 @@ class Lecture extends Resource
         return [
             ID::make()->sortable(),
             Avatar::make('Main Image'),
+            Avatar::make('Background Image', 'back_image'),
             BelongsTo::make('Product', 'product', Product::class),
             Text::make('Name', 'name')
                 ->sortable()->required(),

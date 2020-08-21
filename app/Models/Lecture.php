@@ -19,7 +19,7 @@ class Lecture extends FileModel implements HasMedia
      *
      * @var array
      */
-    protected $fillable = [ 'file_name', 'view_name', 'order', 'description', 'name', 'slug', 'product_id', 'time', 'is_frame', 'frame_height', 'lang', 'main_image'];
+    protected $fillable = [ 'file_name', 'view_name', 'order', 'description', 'name', 'slug', 'product_id', 'time', 'is_frame', 'frame_height', 'lang', 'main_image', 'back_image'];
 
     /**
      * The location of the place where file should be stored.
@@ -53,6 +53,16 @@ class Lecture extends FileModel implements HasMedia
     public function getMainImagePathAttribute()
     {
         return $this->main_image ? Storage::url($this->main_image) : '';
+    }
+
+    /**
+     * Attribute: get back image path.
+     *
+     * @return integer
+     */
+    public function getBackImagePathAttribute()
+    {
+        return $this->back_image ? Storage::url($this->back_image) : '';
     }
 
     /**

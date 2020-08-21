@@ -1,4 +1,4 @@
-@extends('layouts.backend')
+@extends('layouts.backend' , [$closedSidebar = true])
 @section('css_after')
     <style>
         .cropped-text {
@@ -160,7 +160,7 @@
 
         <!-- Dummy content -->
         <div class="block block-rounded block-bordered d-lg-block">
-            <div class="block-content">
+            <div class="block-content" style="background-image: url( {{ asset($lecture->back_image_path) }} );">
                 <div :style="showElement == 'lecture' ? '' : 'display: none'">
                     @if($lecture->is_frame)
                         <iframe id="iframe-new"
