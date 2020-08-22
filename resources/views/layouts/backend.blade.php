@@ -95,13 +95,33 @@
         <!-- Side Navigation -->
         <div class="content-side content-side-full">
             <ul class="nav-main">
-                <li class="nav-main-heading">Education</li>
-                <li class="nav-main-item{{ request()->is('my-products/*') || request()->is('my-products') ? ' active' : '' }}">
-                    <a class="nav-main-link" href="/my-products">
-                        <i class="nav-main-link-icon fas fa-project-diagram"></i>
-                        <span class="nav-main-link-name" style="    font-size: 0.98rem;">My Infoproducts</span>
+                <li class="nav-main-heading">My Info-products</li>
+                @forelse(auth()->user()->getPaidProducts() as $product)
+                <li class="nav-main-item{{ request()->is('my-products/' . $product->slug) || request()->is('my-products/' . $product->slug . '/*') ? ' open' : '' }}">
+
+                    <a class="nav-main-link nav-main-link-submenu" data-toggle="submenu" aria-haspopup="true"
+                       aria-expanded="true">
+                        <i class="nav-main-link-icon si si-star"></i>
+                        <span class="nav-main-link-name"> {{ $product->name }} </span>
                     </a>
+                    <ul class="nav-main-submenu">
+                        <li class="nav-main-item">
+                            <a class="nav-main-link{{ request()->is('my-products/' . $product->slug) ? ' active' : '' }}" href="/{{'my-products/' . $product->slug}}">
+                                <span class="nav-main-link-name">All Lectures</span>
+                            </a>
+                        </li>
+                        @foreach($product->lectures as $lecture)
+                            <li class="nav-main-item">
+                                <a class="nav-main-link{{ request()->is('my-products/' . $product->slug . '/' . $lecture->slug) ? ' active' : '' }}"
+                                   href="{{ '/my-products/' . $product->slug . '/' . $lecture->slug }}">
+                                    <span class="nav-main-link-name">{{$lecture->name}}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
                 </li>
+                @empty
+                @endforelse
             </ul>
         </div>
         <!-- END Side Navigation -->

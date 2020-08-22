@@ -23,7 +23,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/xo_timelaps.MP4',
+            'path' => 'yg3xhPm6CyM',
             'content' => "
             Timelapse. <br>
             Show how you do makeup to a client in an accelerated format, or cook Peking duck in 5 seconds.
@@ -32,7 +32,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/wear_discuss.MP4',
+            'path' => 'A1BV7tGkz8I',
             'content' => "
             Show us what you are wearing today. <br>
             In what jacket do you speak with clients? <br>
@@ -52,7 +52,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/karina_arakel.MP4',
+            'path' => 'VRPb7IlUq64',
             'content' => "
             Share with us what you bought, where and for what price. <br>
             Especially if you bought something at a good discount - why not tell about it? <br>
@@ -181,7 +181,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/recipe.MP4',
+            'path' => 'vzxPHAnL3t0',
             'content' => "
             Do you know the blueberry bombshell pancake recipe your grandma told you? <br>
             Share it! <br>
@@ -209,7 +209,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/15_seconds_day.MP4',
+            'path' => 'ldbYXhXCONI',
             'content' => "
             Fit your day into 15 seconds. <br>
             During the day make videos on your phone, and then edit a video for stories. <br>
@@ -335,7 +335,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/timelaps_sea.MP4',
+            'path' => 'p2_77Y5FVp8',
             'content' => "
             Record a time lapse (accelerated video) of a car trip, sunset or snowfall. <br>
             Everyone loves to watch these kind of meditation videos.
@@ -353,7 +353,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/parcel_unpack.MP4',
+            'path' => 'XQ4PvWsvB1M',
             'content' => "
             A long-awaited package has arrived? <br>
             Open it with subscribers - film the unpacking process on video and post it.
@@ -436,7 +436,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/game_catch_me.MP4',
+            'path' => 'Dm_gvL_MPJc',
             'content' => "
             Game 'Catch Me' <br>
             Create a video where your subscribers will need to catch you in some form. <br>
@@ -479,7 +479,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/maha_dance.MP4',
+            'path' => 'd8N26U4iSbw',
             'content' => "
             Good mood? Just dance! <br>
             Charge yourself with a positive and charge your subscribers with it. <br>
@@ -508,7 +508,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/perevoploshenie.MP4',
+            'path' => 'GhZ77jkkTXM',
             'content' => "
             Show the process of your transformation: <br>
             how after the gym you are going to the theater and turn into a Cinderella, <br>
@@ -519,7 +519,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/naydi_otlichie.MP4',
+            'path' => 'Dm_gvL_MPJc',
             'content' => "
             Find the difference game. <br>
             Post two similar images and let subscribers find all the differences. <br>
@@ -562,7 +562,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/work_video.MP4',
+            'path' => 'Qge3tTH1frI',
             'content' => "
             Started to work? <br>
              You can make content out of this too: film your workflow. <br>
@@ -623,7 +623,7 @@
         [
             'alt' => '100 Instagram Ideas - Apartment',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/room_tour.MP4',
+            'path' => '9ZC0PWawduo',
             'content' => "
             Show us your apartment. <br>
               Even if you live in an ordinary small house. <br>
@@ -645,7 +645,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/molly_tutorial.MP4',
+            'path' => 'a5V_IOeFxps',
             'content' => "
               Show in detail how you edit your pictures. <br>
                  Tell us about apps and presets, don't be afraid to share information.
@@ -693,7 +693,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/guess_melody.MP4',
+            'path' => 'htiKgyj9gs4',
             'content' => "
             Guess the melody game. <br>
             Sing or play a famous melody and ask subscribers to guess where it comes from. <br>
@@ -791,7 +791,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/inst_serias.MP4',
+            'path' => 'jAa5pVJfAss',
             'content' => "
               Make your story series! <br>
              Feel like a real director and tell a short story, even if it's a story of a day in the office. <br>
@@ -821,7 +821,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/gifs_add.MP4',
+            'path' => 'Td-PGW3wVwY',
             'content' => "
              Not the best selfie? <br>
               Add more stickers and gifs, turn yourself into a fairy-tale character.
@@ -830,7 +830,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/to_do.MP4',
+            'path' => 'FBxkfxnuxeQ',
             'content' => "
               Just finished making a to-do list for a month, a week, or a day? <br>
               Share it with subscribers, people will be interested to know about your plans. <br>
@@ -852,7 +852,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/long_story.MP4',
+            'path' => 'ndY98l8UEI0',
             'content' => "
               Tell a story over several slides. You can prepare instructions. <br>
               For example, how to properly sort trash or wash your hands.
@@ -871,7 +871,7 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/bill.MOV',
+            'path' => 'ugD5axyyioQ',
             'content' => "
               Tell us about your spending, describe your budget. <br>
               People love to count other people's money - do it for them. <br>
@@ -881,21 +881,12 @@
         [
             'alt' => '',
             'type' => 'video',
-            'path' => '/app/lectures/img/100_ideas/game_date.MP4',
+            'path' => 'wnbNCn0_JXs',
             'content' => "
               Ask subscribers for a date, <br>
                and then upload a photo or video that was taken that day. <br>
                @almiways
 
-            ",
-        ],
-        [
-            'alt' => '100 Instagram Ideas - Sets',
-            'type' => 'photo',
-            'path' => '/app/lectures/img/100_ideas/looks.PNG',
-            'content' => "
-              Post several sets of clothes, cosmetics or fruit sets <br>
-              and ask subscribers which one they like best
             ",
         ],
     ];
@@ -943,9 +934,7 @@
                 Many people will definitely want to add it to their playlists.
             </p>
             <p class="p p-idea-photo">
-                <video controls="true" height="100%" loop="" muted="" playsinline="" class="idea-photo">
-                    <source class="video_source" data-way="{{ asset('app/lectures/img/100_ideas/billie_song.MP4') }}" src="{{ asset('app/lectures/img/100_ideas/billie_song.MP4') }}" type="video/mp4">
-                </video>
+                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/TerZS8BH1tI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
         </div>
         <div class="idea-div-r">
@@ -974,9 +963,7 @@
                 <b>@mahavsekupleno</b>
             </p>
             <p class="p p-idea-photo">
-                <video controls="true" height="100%" loop="" muted="" playsinline="" class="idea-photo">
-                    <source class="video_source" data-way="{{ asset('app/lectures/img/100_ideas/doll.MP4') }}" src="{{ asset('app/lectures/img/100_ideas/doll.MP4') }}" type="video/mp4">
-                </video>
+                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/G9k-5LdF1M4?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
         </div>
         <div class="idea-div-r">
@@ -990,9 +977,7 @@
                 Make a funny story in an unusual mask that you found on the vastness of Instagram.
             </p>
             <p class="p p-idea-photo">
-                <video controls="true" height="100%" loop="" muted="" playsinline="" class="idea-photo">
-                    <source class="video_source" data-way="{{ asset('app/lectures/img/100_ideas/mask.MP4') }}" src="{{ asset('app/lectures/img/100_ideas/mask.MP4') }}" type="video/mp4">
-                </video>
+                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/AUyJ7i8BPes?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
         </div>
         <div class="idea-div-l">
@@ -1105,26 +1090,37 @@
                         @endif
                     @else
                         @if( is_array($idea['path']) )
+
                             <div class="row">
                                 @foreach($idea['path'] as $path)
                                     <div class="{{$idea['class']}}">
                                         <p class="p p-idea-photo">
-                                            <video controls="true" height="100%" loop="" muted="" playsinline="" class="idea-photo">
-                                                <source class="video_source" data-way="{{ $path }}" src="{{ $path }}" type="video/mp4">
-                                            </video>
+                                            <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/{{$path}}?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </p>
                                     </div>
                                 @endforeach
                             </div>
                         @else
                             <p class="p p-idea-photo">
-                                <video controls="true" height="100%" loop="" muted="" playsinline="" class="idea-photo">
-                                    <source class="video_source" data-way="{{ $idea['path'] }}" src="{{ $idea['path'] }}" type="video/mp4">
-                                </video>
+                                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/{{ $idea['path'] }}?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </p>
                         @endif
                     @endif
                 </div>
         @endforeach
+        <div class="idea-div-l" style="border-left: 0; border-bottom: 0;">
+            <h4 class="h4 text-primary idea-h-l">
+                <b class="idea-num" style="padding: 7px 0px;">100</b>
+                IDEA
+            </h4>
+            <br>
+            <p class="p idea-p-l">
+                Post several sets of clothes, cosmetics or fruit sets <br>
+                and ask subscribers which one they like best
+            </p>
+            <p class="p p-idea-photo">
+                <img src="/app/lectures/img/100_ideas/looks.PNG" alt="100 Instagram Ideas - Sets" class="idea-photo">
+            </p>
+        </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-@extends('layouts.backend' , [$closedSidebar = true])
+@extends('layouts.backend' , [$closedSidebar = false])
 @section('css_after')
     <style>
         .cropped-text {
@@ -286,4 +286,9 @@
 @endsection
 @section('js_after')
     <script src="/js/pages/be_ui_progress.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('page-header-loader').classList.add('overlay-header');
+        });
+    </script>
 @endsection
