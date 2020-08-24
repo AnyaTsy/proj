@@ -289,6 +289,32 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('page-header-loader').classList.add('overlay-header');
+            let el = document.getElementById('tab-buttons');
+            if(el) {
+                if(!window.matchMedia("(min-width: 400px)").matches) {
+                    el.classList.remove('btn-group');
+                    el.classList.add('btn-group-vertical');
+                }
+                else {
+                    el.classList.remove('btn-group-vertical');
+                    el.classList.add('btn-group');
+                }
+            }
+        });
+    </script>
+    <script>
+        $(window).resize(function(){
+            let el = document.getElementById('tab-buttons');
+            if(el) {
+                if(!window.matchMedia("(min-width: 400px)").matches) {
+                    el.classList.remove('btn-group');
+                    el.classList.add('btn-group-vertical');
+                }
+                else {
+                    el.classList.remove('btn-group-vertical');
+                    el.classList.add('btn-group');
+                }
+            }
         });
     </script>
 @endsection

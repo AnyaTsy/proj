@@ -79,7 +79,7 @@ ul ol {
 }
 
 dt {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 dd {
@@ -324,7 +324,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 1.375rem;
   font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25;
   color: #171717;
 }
@@ -488,7 +488,7 @@ kbd {
 kbd kbd {
   padding: 0;
   font-size: 100%;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 pre {
@@ -2661,7 +2661,7 @@ textarea.form-control {
 
 .btn {
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   color: #495057;
   text-align: center;
   vertical-align: middle;
@@ -4678,7 +4678,7 @@ input[type="button"].btn-block {
   display: inline-block;
   padding: 0.25em 0.4em;
   font-size: 75%;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   text-align: center;
   white-space: nowrap;
@@ -4876,7 +4876,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 }
 
 .alert-link {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .alert-dismissible {
@@ -5449,7 +5449,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 .close {
   float: right;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
@@ -11333,7 +11333,7 @@ body {
 
 b,
 strong {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 a {
@@ -11535,7 +11535,7 @@ small,
 }
 
 .table thead th {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .table-vcenter th,
@@ -13033,7 +13033,7 @@ small,
 }
 
 .nav-link {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav-pills .nav-link:hover, .nav-pills .nav-link:focus {
@@ -13139,7 +13139,7 @@ small,
 }
 
 .page-link {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .page-link:focus {
@@ -14663,7 +14663,7 @@ a.block.block-themed .btn-block-option:focus,
   margin: 1px 0;
   min-height: 2.25rem;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25rem;
   color: #495057;
   border-radius: 0.2rem;
@@ -15535,7 +15535,7 @@ a.item.item-link-pop:active {
   height: 2rem;
   line-height: 2rem;
   z-index: 5;
-  font-weight: 500;
+  font-weight: 600;
   border-top-left-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
 }
@@ -28028,7 +28028,7 @@ readers do not read off random characters that represent icons */
   margin: 4rem 0;
   font-size: 1rem;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   color: #495057;
 }
 

@@ -1,10 +1,50 @@
 .flag-100 {
     margin-left: 47%;
 }
+.main-img-app {
+    margin-left: 37.5%;
+    max-width: 25%;
+}
 
 @media (max-width: 480px) {
     .flag-100 {
         margin-left: 40% !important;
+    }
+    .main-img-app {
+        margin-left: 0% !important;
+        max-width: 100% !important;
+    }
+    .btn-group-tab {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .btn-group-tab > .btn:not(:last-child):not(.dropdown-toggle), .btn-group-tab > .btn-group:not(:last-child) > .btn {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .btn-group-tab > .btn, .btn-group-tab > .btn-group {
+        width: 100%;
+    }
+    .btn-group > .btn, .btn-group-tab > .btn {
+        position: relative;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+    .btn-group-tab > .btn:not(:first-child), .btn-group-tab > .btn-group:not(:first-child) > .btn {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .btn-group-tab > .btn:not(:first-child), .btn-group-tab > .btn-group:not(:first-child) {
+        margin-top: -1px;
     }
 }
 
@@ -184,6 +224,26 @@ ul {
 .idea-p-l {
     text-align: left !important;
     margin-left: 10px;
+}
+.idea-photo-app {
+    border-radius: 30px;
+    width: 100%;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 23px 3px rgba(103, 114, 229, 0.22);
+}
+.app-span {
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 100px;
+    text-shadow: 0 0 1em rgba(103, 114, 229, 0.22);
+    color: #313753;
+}
+.app-div {
+    margin-bottom: 15px;
+    font-size: 25px;
+}
+.app-p {
+    font-size: 18px;
 }
 
 

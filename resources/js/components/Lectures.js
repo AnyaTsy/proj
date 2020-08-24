@@ -12,7 +12,8 @@ if (document.getElementById('vue-lectures')) {
 
         },
         data: {
-            showElement: 'lecture'
+            showElement: 'lecture',
+            currentTab: 'retouch',
         },
         created() {
             console.log(this.showElement);
@@ -31,6 +32,9 @@ if (document.getElementById('vue-lectures')) {
                 let btn = document.getElementById('progress-bar-value');
                 btn.value = progress;
                 btn.click();
+            },
+            changeTab(tab) {
+                this.currentTab = tab;
             }
         }
     });
