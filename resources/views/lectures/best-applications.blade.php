@@ -13,7 +13,10 @@
             </div>
         </div>
         <h3 class="text-primary" style="font-size: 30px">
-            List of the best mobile applications for photos and videos editing
+            List of the best mobile applications for photos and videos editing <br>
+            <small style=" font-size: 17px; color: #343a40 ">
+                <i class="fas fa-star" style="color: #feb13a;"></i> - means "base application"
+            </small>
         </h3>
 
     </div>
@@ -37,14 +40,17 @@
         @foreach($apps as $app)
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <p class="p p-idea-photo">
+                                @if( key_exists('base', $app) )
+                                    <i class="fas fa-star app-base"></i>
+                                @endif
                                 <img src="/app/lectures/img/best_apps/{{ $app['path'] }}" alt="{{ $app['name'] }}" class="idea-photo idea-photo-app">
                                 <br>
                                 <span class="app-span">{{ $app['name'] }}</span>
                             </p>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-8">
                             <p class="p">
                                 {!! $app['content'] !!}
                             </p>
@@ -59,14 +65,17 @@
         @foreach($videoApps as $app)
             <div class="col-md-6">
                 <div class="row">
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         <p class="p p-idea-photo">
+                            @if( key_exists('base', $app) )
+                                <i class="fas fa-star app-base"></i>
+                            @endif
                             <img src="/app/lectures/img/best_apps/{{ $app['path'] }}" alt="{{ $app['name'] }}" class="idea-photo idea-photo-app">
                             <br>
                             <span class="app-span">{{ $app['name'] }}</span>
                         </p>
                     </div>
-                    <div class="col-md-7">
+                    <div class="col-md-8">
                         <p class="p">
                             {!! $app['content'] !!}
                         </p>
@@ -82,14 +91,17 @@
         @foreach($photoDecor as $app)
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <p class="p p-idea-photo">
+                                @if( key_exists('base', $app) )
+                                    <i class="fas fa-star app-base"></i>
+                                @endif
                                 <img src="/app/lectures/img/best_apps/{{ $app['path'] }}" alt="{{ $app['name'] }}" class="idea-photo idea-photo-app">
                                 <br>
                                 <span class="app-span">{{ $app['name'] }}</span>
                             </p>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-8">
                             <p class="p">
                                 {!! $app['content'] !!}
                             </p>
@@ -100,13 +112,16 @@
         </div>
     </div>
     <div v-if="currentTab == 'templates'" id="templates">
-        <p>
-            All of these apps have one function - to provide cool templates for your Instagram stories! THE DIFFERENCE IS ONLY IN THEM DESIGN AND ANIMATION. Keep a selection of the top and high quality!
+        <p class="text-center" style="font-size: 17px;">
+            All of these apps have one function - to provide cool templates for your Instagram stories! The difference in templates and animations. Top Design Apps For Instagram Stories!
         </p>
         <div class="row app-div">
         @foreach($templatesStory as $app)
                 <div class="col-md-2">
                     <p class="p p-idea-photo">
+                        @if( key_exists('base', $app) )
+                            <i class="fas fa-star app-base"></i>
+                        @endif
                         <img src="/app/lectures/img/best_apps/{{ $app['path'] }}" alt="{{ $app['name'] }}" class="idea-photo idea-photo-app">
                         <br>
                         <span class="app-span">{{ $app['name'] }}</span>
@@ -119,25 +134,20 @@
         </div>
     </div>
     <div v-if="currentTab == 'color'" id="color">
-            <h4>
-                For color and light correction
-            </h4>
-            <p>
-                BASE
-            </p>
         <div class="row">
             @foreach($colorBase as $app)
 
                     <div class="col-md-6">
                         <div class="row">
-                            <div class="col-md-5">
+                            <div class="col-md-4">
                                 <p class="p p-idea-photo">
+                                    <i class="fas fa-star app-base"></i>
                                     <img src="/app/lectures/img/best_apps/{{ $app['path'] }}" alt="{{ $app['name'] }}" class="idea-photo idea-photo-app">
                                     <br>
                                     <span class="app-span">{{ $app['name'] }}</span>
                                 </p>
                             </div>
-                            <div class="col-md-7">
+                            <div class="col-md-8">
                                 <p class="p">
                                     {!! $app['content'] !!}
                                 </p>
@@ -152,14 +162,17 @@
 
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <p class="p p-idea-photo">
+                                @if( key_exists('base', $app) )
+                                    <i class="fas fa-star app-base"></i>
+                                @endif
                                 <img src="/app/lectures/img/best_apps/{{ $app['path'] }}" alt="{{ $app['name'] }}" class="idea-photo idea-photo-app">
                                 <br>
                                 <span class="app-span">{{ $app['name'] }}</span>
                             </p>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-8">
                             <p class="p">
                                 {!! $app['content'] !!}
                             </p>
@@ -178,14 +191,17 @@
         @foreach($newApps as $app)
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <p class="p p-idea-photo">
+                                @if( key_exists('base', $app) )
+                                    <i class="fas fa-star app-base"></i>
+                                @endif
                                 <img src="/app/lectures/img/best_apps/{{ $app['path'] }}" alt="{{ $app['name'] }}" class="idea-photo idea-photo-app">
                                 <br>
                                 <span class="app-span">{{ $app['name'] }}</span>
                             </p>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-8">
                             <p class="p">
                                 {!! $app['content'] !!}
                             </p>

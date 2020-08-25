@@ -16,6 +16,7 @@ $apps = [
     ],
     [
         'name' => 'Factune 2',
+        'base' => 1,
         'path' => 'facetune.webp',
         'content' => '
         Full face retouch, reshaping, background blur, whitening. <br>
@@ -188,6 +189,7 @@ $videoApps = [
     ],
     [
         'name' => 'Chromic',
+        'base' => 1,
         'path' => 'chromic.png',
         'content' => 'Very stylish filters for videos, most bloggers process their stories here. <br>
           (<b>Free</b>, IOS)
@@ -202,8 +204,9 @@ $videoApps = [
     ],
     [
         'name' => 'Prequel',
+        'base' => 1,
         'path' => 'prequel.webp',
-        'content' => 'So far the best application for editing photos and videos. Trend filters used by many top bloggers. <br>
+        'content' => 'So far the best application for me to edit photos and videos. Trend filters used by many top bloggers. <br>
          (<b>Free</b>, IOS, Android)
         '
     ],
@@ -321,6 +324,7 @@ $videoApps = [
     ],
     [
         'name' => 'InShot',
+        'base' => 1,
         'path' => 'inshot.webp',
         'content' => 'One of the most essential applications for editing and complete video processing. <br>
            (<b>Free</b>, IOS, Android)
@@ -328,6 +332,7 @@ $videoApps = [
     ],
     [
         'name' => 'Videoleap',
+        'base' => 1,
         'path' => 'videoleap.png',
         'content' => 'The most powerful mobile video editing app. Includes such features as: keyframe animations, chroma key compositing, different video effects, transitions and more. <br>
           (<b>Free</b>, IOS, Android - VivaCut)
@@ -395,6 +400,7 @@ $photoDecor = [
     [
         'name' => 'Nichi',
         'path' => 'nichi.webp',
+        'base' => 1,
         'content' => 'Create collages, you can choose a background, a font, apply stickers of statues, an eucalyptus branch, a patch, and many other stylish stickers. <br>
           (<b>Free</b>, IOS, Android)
         '
