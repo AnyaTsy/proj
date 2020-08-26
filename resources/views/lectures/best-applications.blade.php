@@ -17,8 +17,19 @@
             <small style=" font-size: 17px; color: #343a40 ">
                 <i class="fas fa-star" style="color: #feb13a;"></i> - means "base application"
             </small>
+
         </h3>
 
+    </div>
+
+    <div>
+
+        <p>
+            <small style=" font-size: 17px; color: #343a40;">
+                Toggle buttons to see different content
+            </small>
+            <img src="" alt="" >
+        </p>
     </div>
 
     <div class="btn-toolbar mb-2 text-center" role="toolbar">
