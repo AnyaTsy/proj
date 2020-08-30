@@ -110,7 +110,7 @@
                                 <span class="nav-main-link-name">All Lectures</span>
                             </a>
                         </li>
-                        @foreach($product->lectures as $lecture)
+                        @foreach($product->lectures()->orderBy('order')->get() as $lecture)
                             <li class="nav-main-item">
                                 <a class="nav-main-link{{ request()->is('my-products/' . $product->slug . '/' . $lecture->slug) ? ' active' : '' }}"
                                    href="{{ '/my-products/' . $product->slug . '/' . $lecture->slug }}">
