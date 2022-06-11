@@ -7,6 +7,9 @@
 }
 
 @media (max-width: 480px) {
+    .edit-main-img {
+        width: 100% !important;
+    }
     .add-warning-div {
         width: 100% !important;
         padding: 14px !important;
@@ -145,7 +148,9 @@ ul {
     line-height: 1.3em;
     margin-bottom: 18px;
 }
-
+.idea-youtube {
+    min-height: 600px;
+}
 .course-overview  .review-list {
     position: relative;
     margin-bottom: 20px;
@@ -330,6 +335,10 @@ ul {
     padding: 0 14px 14px 0;
 }
 
+
+.edit-main-img {
+    width: 17%;
+}
 
 
 

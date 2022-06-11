@@ -934,7 +934,7 @@
                 Many people will definitely want to add it to their playlists.
             </p>
             <p class="p p-idea-photo">
-                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/TerZS8BH1tI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="idea-photo idea-youtube" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/TerZS8BH1tI?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
         </div>
         <div class="idea-div-r">
@@ -963,7 +963,7 @@
                 <b>@mahavsekupleno</b>
             </p>
             <p class="p p-idea-photo">
-                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/G9k-5LdF1M4?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="idea-photo idea-youtube" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/G9k-5LdF1M4?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
         </div>
         <div class="idea-div-r">
@@ -977,7 +977,7 @@
                 Make a funny story in an unusual mask that you found on the vastness of Instagram.
             </p>
             <p class="p p-idea-photo">
-                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/AUyJ7i8BPes?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="idea-photo idea-youtube" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/AUyJ7i8BPes?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </p>
         </div>
         <div class="idea-div-l">
@@ -1095,14 +1095,14 @@
                                 @foreach($idea['path'] as $path)
                                     <div class="{{$idea['class']}}">
                                         <p class="p p-idea-photo">
-                                            <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/{{$path}}?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                            <iframe class="idea-photo idea-youtube" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/{{$path}}?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                         </p>
                                     </div>
                                 @endforeach
                             </div>
                         @else
                             <p class="p p-idea-photo">
-                                <iframe class="idea-photo" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/{{ $idea['path'] }}?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe class="idea-photo idea-youtube" width="100%" height="600" style="max-width: 338px" src="https://www.youtube.com/embed/{{ $idea['path'] }}?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </p>
                         @endif
                     @endif
